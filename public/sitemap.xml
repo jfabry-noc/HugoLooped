@@ -2,54 +2,54 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://looped.network/pages/about/</loc>
+    <loc>https://hugolooped.pages.dev/pages/about/</loc>
     <lastmod>2023-04-04T18:16:50-04:00</lastmod>
   </url><url>
-    <loc>https://looped.network/</loc>
+    <loc>https://hugolooped.pages.dev/</loc>
     <lastmod>2023-04-04T18:16:50-04:00</lastmod>
   </url><url>
-    <loc>https://looped.network/pages/</loc>
+    <loc>https://hugolooped.pages.dev/pages/</loc>
     <lastmod>2023-04-04T18:16:50-04:00</lastmod>
   </url><url>
-    <loc>https://looped.network/posts/back-to-hugo/</loc>
+    <loc>https://hugolooped.pages.dev/posts/back-to-hugo/</loc>
     <lastmod>2023-04-04T18:12:18-04:00</lastmod>
   </url><url>
-    <loc>https://looped.network/posts/</loc>
+    <loc>https://hugolooped.pages.dev/posts/</loc>
     <lastmod>2023-04-04T18:12:18-04:00</lastmod>
   </url><url>
-    <loc>https://looped.network/posts/decreasing-domains/</loc>
+    <loc>https://hugolooped.pages.dev/posts/decreasing-domains/</loc>
     <lastmod>2022-09-26T18:31:27-04:00</lastmod>
   </url><url>
-    <loc>https://looped.network/posts/manjaro-invalid-corrupt-package/</loc>
+    <loc>https://hugolooped.pages.dev/posts/manjaro-invalid-corrupt-package/</loc>
     <lastmod>2022-09-17T18:30:30-04:00</lastmod>
   </url><url>
-    <loc>https://looped.network/posts/ffmpeg-audio-from-video/</loc>
+    <loc>https://hugolooped.pages.dev/posts/ffmpeg-audio-from-video/</loc>
     <lastmod>2022-09-14T18:28:19-04:00</lastmod>
   </url><url>
-    <loc>https://looped.network/posts/kubectl-symbolic-link-error/</loc>
+    <loc>https://hugolooped.pages.dev/posts/kubectl-symbolic-link-error/</loc>
     <lastmod>2022-09-10T18:27:23-04:00</lastmod>
   </url><url>
-    <loc>https://looped.network/posts/kinit-keytab-fail/</loc>
+    <loc>https://hugolooped.pages.dev/posts/kinit-keytab-fail/</loc>
     <lastmod>2022-09-07T18:26:27-04:00</lastmod>
   </url><url>
-    <loc>https://looped.network/posts/neovim-lsp/</loc>
+    <loc>https://hugolooped.pages.dev/posts/neovim-lsp/</loc>
     <lastmod>2022-08-20T18:25:16-04:00</lastmod>
   </url><url>
-    <loc>https://looped.network/posts/gss-ntlmssp-alpine/</loc>
+    <loc>https://hugolooped.pages.dev/posts/gss-ntlmssp-alpine/</loc>
     <lastmod>2022-08-14T18:23:54-04:00</lastmod>
   </url><url>
-    <loc>https://looped.network/posts/powershell-import-classes-functions/</loc>
+    <loc>https://hugolooped.pages.dev/posts/powershell-import-classes-functions/</loc>
     <lastmod>2022-07-31T18:20:36-04:00</lastmod>
   </url><url>
-    <loc>https://looped.network/posts/terraform-cloud-variables/</loc>
+    <loc>https://hugolooped.pages.dev/posts/terraform-cloud-variables/</loc>
     <lastmod>2022-07-05T18:19:08-04:00</lastmod>
   </url><url>
-    <loc>https://looped.network/categories/</loc>
+    <loc>https://hugolooped.pages.dev/categories/</loc>
   </url><url>
-    <loc>https://looped.network/manifest/index.json</loc>
+    <loc>https://hugolooped.pages.dev/manifest/index.json</loc>
   </url><url>
-    <loc>https://looped.network/search/</loc>
+    <loc>https://hugolooped.pages.dev/search/</loc>
   </url><url>
-    <loc>https://looped.network/tags/</loc>
+    <loc>https://hugolooped.pages.dev/tags/</loc>
   </url>
 </urlset>
