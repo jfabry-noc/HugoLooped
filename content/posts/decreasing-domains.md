@@ -6,7 +6,6 @@ tags:
   - DNS
   - ICANN
 draft: false
-image: "/2022/icann_domains.png"
 ---
 
 It just dawned on me that I've finally made good progress in decreasing the number of domains that I own. I've historically purchased domains on a whim; when I'm bored or sitting on a bar stool somewhere, I'll grab my phone and check if random domains that pop into my head are available. While the overwhelming majority of them would be taken, I'd occasionally strike upon something that hadn't been snatched up. I'd typically _always_ buy them... and then do nothing with them the vast majority of the time. They were basically like [ICANN](https://www.icann.org/) Pokémon.

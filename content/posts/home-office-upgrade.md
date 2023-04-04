@@ -5,7 +5,6 @@ draft: false
 tags:
   - Home Office
   - Desk
-image: "new_desk_setup_main.jpeg"
 ---
 
 In a move that was _highly_ overdue, I finally redid my home office several weeks ago. It's actually embarrassing to share, but this is what it had looked like prior to the overhaul... not that I would even call this an office:

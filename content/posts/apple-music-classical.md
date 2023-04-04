@@ -7,7 +7,6 @@ tags:
   - Apple Music Classical
   - Classical
   - Streaming
-image: "/2023/apple_music_classical1.jpeg"
 ---
 
 Last week Apple released [Apple Music Classical](https://music.apple.com/us/music-movie/introducing-apple-music-classical/1671879126), a variant of their Apple Music streaming service (and which operates off of the same subscription) but that only contains classical music. While I'm no expert by any stretch, I'm actually a bit of a classical music fan. It's something I turn to frequently when I want music without any lyrics (e.g. when I'm reading or trying to focus on something for work.) My car's stereo is even always tuned to the local classical music station, though I typically only listen to it for a few moments until Bluetooth connects. Despite liking classical music, though, I couldn't imagine why this would be a standalone app. Apple Music already has a great selection of classical and pretty terrific playlists... wouldn't this just basically be the same thing as what I see in the Classical category?

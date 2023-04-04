@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Apple Music on LoopedNetwork</title>
-    <link>https://hugolooped.pages.dev/tags/apple-music/</link>
+    <link>https://looped.network/tags/apple-music/</link>
     <description>Recent content in Apple Music on LoopedNetwork</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Copyright 2023 - LoopedNetwork</copyright>
-    <lastBuildDate>Mon, 03 Apr 2023 19:11:24 -0400</lastBuildDate><atom:link href="https://hugolooped.pages.dev/tags/apple-music/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 03 Apr 2023 19:11:24 -0400</lastBuildDate><atom:link href="https://looped.network/tags/apple-music/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Apple Music Classical</title>
-      <link>https://hugolooped.pages.dev/posts/apple-music-classical/</link>
+      <link>https://looped.network/posts/apple-music-classical/</link>
       <pubDate>Mon, 03 Apr 2023 19:11:24 -0400</pubDate>
       
-      <guid>https://hugolooped.pages.dev/posts/apple-music-classical/</guid>
+      <guid>https://looped.network/posts/apple-music-classical/</guid>
       <description>Last week Apple released Apple Music Classical, a variant of their Apple Music streaming service (and which operates off of the same subscription) but that only contains classical music. While I&amp;rsquo;m no expert by any stretch, I&amp;rsquo;m actually a bit of a classical music fan. It&amp;rsquo;s something I turn to frequently when I want music without any lyrics (e.g. when I&amp;rsquo;m reading or trying to focus on something for work.) My car&amp;rsquo;s stereo is even always tuned to the local classical music station, though I typically only listen to it for a few moments until Bluetooth connects.</description>
     </item>
     

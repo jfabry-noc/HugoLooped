@@ -2,10 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on LoopedNetwork</title>
-    <link>https://hugolooped.pages.dev/categories/</link>
+    <link>https://looped.network/categories/</link>
     <description>Recent content in Categories on LoopedNetwork</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <copyright>Copyright 2023 - LoopedNetwork</copyright><atom:link href="https://hugolooped.pages.dev/categories/index.xml" rel="self" type="application/rss+xml" />
+    <copyright>Copyright 2023 - LoopedNetwork</copyright><atom:link href="https://looped.network/categories/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

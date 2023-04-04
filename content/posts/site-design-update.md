@@ -6,7 +6,6 @@ tags:
   - Write.as
   - CSS
   - Dracula Theme
-image: "/2023/writeas_blog_dracula.png"
 ---
 
 **Note**: This post is no longer accurate since the site has moved from Write.as. However, here's a screenshot of what it looked like at the time; I was quite happy with it!

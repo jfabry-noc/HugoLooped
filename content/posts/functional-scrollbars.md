@@ -6,7 +6,6 @@ tags:
   - UI
   - UX
   - Scrollbars
-image: "/2023/macos9.png"
 ---
 
 Lately I've been lamenting the death of the functional scrollbar. Remember back in the day when scrollbars looked like this?

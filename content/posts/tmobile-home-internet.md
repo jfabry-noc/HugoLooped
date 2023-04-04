@@ -7,7 +7,6 @@ tags:
   - Home Internet
   - 5G
   - VPN
-image: "/2023/t-mobile_wifi_speed.jpeg"
 ---
 
 For the majority of my life, I've only had one Internet service provider where I lived. That was originally just a single dial-up provider when I was growing up to only having one coaxial cable provider at 4 different apartments in the span of 11 years. That recently changed when I went from having a single provider (coax) where I'm currently at to having **3** providers (coax, 5G, and fiber.)

@@ -2,208 +2,223 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://hugolooped.pages.dev/pages/about/</loc>
+    <loc>https://looped.network/pages/about/</loc>
     <lastmod>2023-04-04T18:16:50-04:00</lastmod>
   </url><url>
-    <loc>https://hugolooped.pages.dev/</loc>
+    <loc>https://looped.network/</loc>
     <lastmod>2023-04-04T18:16:50-04:00</lastmod>
   </url><url>
-    <loc>https://hugolooped.pages.dev/pages/</loc>
+    <loc>https://looped.network/pages/</loc>
     <lastmod>2023-04-04T18:16:50-04:00</lastmod>
   </url><url>
-    <loc>https://hugolooped.pages.dev/posts/back-to-hugo/</loc>
+    <loc>https://looped.network/posts/back-to-hugo/</loc>
     <lastmod>2023-04-04T18:12:18-04:00</lastmod>
   </url><url>
-    <loc>https://hugolooped.pages.dev/posts/</loc>
+    <loc>https://looped.network/tags/cloudflare/</loc>
     <lastmod>2023-04-04T18:12:18-04:00</lastmod>
   </url><url>
-    <loc>https://hugolooped.pages.dev/tags/apple-music/</loc>
+    <loc>https://looped.network/tags/cloudflare-pages/</loc>
+    <lastmod>2023-04-04T18:12:18-04:00</lastmod>
+  </url><url>
+    <loc>https://looped.network/tags/hugo/</loc>
+    <lastmod>2023-04-04T18:12:18-04:00</lastmod>
+  </url><url>
+    <loc>https://looped.network/posts/</loc>
+    <lastmod>2023-04-04T18:12:18-04:00</lastmod>
+  </url><url>
+    <loc>https://looped.network/tags/ssg/</loc>
+    <lastmod>2023-04-04T18:12:18-04:00</lastmod>
+  </url><url>
+    <loc>https://looped.network/tags/static-site-generator/</loc>
+    <lastmod>2023-04-04T18:12:18-04:00</lastmod>
+  </url><url>
+    <loc>https://looped.network/tags/</loc>
+    <lastmod>2023-04-04T18:12:18-04:00</lastmod>
+  </url><url>
+    <loc>https://looped.network/tags/apple-music/</loc>
     <lastmod>2023-04-03T19:11:24-04:00</lastmod>
   </url><url>
-    <loc>https://hugolooped.pages.dev/tags/apple-music-classical/</loc>
+    <loc>https://looped.network/tags/apple-music-classical/</loc>
     <lastmod>2023-04-03T19:11:24-04:00</lastmod>
   </url><url>
-    <loc>https://hugolooped.pages.dev/posts/apple-music-classical/</loc>
+    <loc>https://looped.network/posts/apple-music-classical/</loc>
     <lastmod>2023-04-03T19:11:24-04:00</lastmod>
   </url><url>
-    <loc>https://hugolooped.pages.dev/tags/classical/</loc>
+    <loc>https://looped.network/tags/classical/</loc>
     <lastmod>2023-04-03T19:11:24-04:00</lastmod>
   </url><url>
-    <loc>https://hugolooped.pages.dev/tags/streaming/</loc>
+    <loc>https://looped.network/tags/streaming/</loc>
     <lastmod>2023-04-03T19:11:24-04:00</lastmod>
   </url><url>
-    <loc>https://hugolooped.pages.dev/tags/</loc>
-    <lastmod>2023-04-03T19:11:24-04:00</lastmod>
-  </url><url>
-    <loc>https://hugolooped.pages.dev/tags/css/</loc>
+    <loc>https://looped.network/tags/css/</loc>
     <lastmod>2023-04-01T19:09:21-04:00</lastmod>
   </url><url>
-    <loc>https://hugolooped.pages.dev/tags/dracula-theme/</loc>
+    <loc>https://looped.network/tags/dracula-theme/</loc>
     <lastmod>2023-04-01T19:09:21-04:00</lastmod>
   </url><url>
-    <loc>https://hugolooped.pages.dev/posts/site-design-update/</loc>
+    <loc>https://looped.network/posts/site-design-update/</loc>
     <lastmod>2023-04-01T19:09:21-04:00</lastmod>
   </url><url>
-    <loc>https://hugolooped.pages.dev/tags/write.as/</loc>
+    <loc>https://looped.network/tags/write.as/</loc>
     <lastmod>2023-04-01T19:09:21-04:00</lastmod>
   </url><url>
-    <loc>https://hugolooped.pages.dev/tags/desk/</loc>
+    <loc>https://looped.network/tags/desk/</loc>
     <lastmod>2023-03-31T19:06:26-04:00</lastmod>
   </url><url>
-    <loc>https://hugolooped.pages.dev/tags/home-office/</loc>
+    <loc>https://looped.network/tags/home-office/</loc>
     <lastmod>2023-03-31T19:06:26-04:00</lastmod>
   </url><url>
-    <loc>https://hugolooped.pages.dev/posts/home-office-upgrade/</loc>
+    <loc>https://looped.network/posts/home-office-upgrade/</loc>
     <lastmod>2023-03-31T19:06:26-04:00</lastmod>
   </url><url>
-    <loc>https://hugolooped.pages.dev/posts/functional-scrollbars/</loc>
+    <loc>https://looped.network/posts/functional-scrollbars/</loc>
     <lastmod>2023-03-25T19:02:01-04:00</lastmod>
   </url><url>
-    <loc>https://hugolooped.pages.dev/tags/scrollbars/</loc>
+    <loc>https://looped.network/tags/scrollbars/</loc>
     <lastmod>2023-03-25T19:02:01-04:00</lastmod>
   </url><url>
-    <loc>https://hugolooped.pages.dev/tags/ui/</loc>
+    <loc>https://looped.network/tags/ui/</loc>
     <lastmod>2023-03-25T19:02:01-04:00</lastmod>
   </url><url>
-    <loc>https://hugolooped.pages.dev/tags/ux/</loc>
+    <loc>https://looped.network/tags/ux/</loc>
     <lastmod>2023-03-25T19:02:01-04:00</lastmod>
   </url><url>
-    <loc>https://hugolooped.pages.dev/tags/5g/</loc>
+    <loc>https://looped.network/tags/5g/</loc>
     <lastmod>2023-03-19T18:58:39-04:00</lastmod>
   </url><url>
-    <loc>https://hugolooped.pages.dev/tags/home-internet/</loc>
+    <loc>https://looped.network/tags/home-internet/</loc>
     <lastmod>2023-03-19T18:58:39-04:00</lastmod>
   </url><url>
-    <loc>https://hugolooped.pages.dev/tags/t-mobile/</loc>
+    <loc>https://looped.network/tags/t-mobile/</loc>
     <lastmod>2023-03-19T18:58:39-04:00</lastmod>
   </url><url>
-    <loc>https://hugolooped.pages.dev/posts/tmobile-home-internet/</loc>
+    <loc>https://looped.network/posts/tmobile-home-internet/</loc>
     <lastmod>2023-03-19T18:58:39-04:00</lastmod>
   </url><url>
-    <loc>https://hugolooped.pages.dev/tags/vpn/</loc>
+    <loc>https://looped.network/tags/vpn/</loc>
     <lastmod>2023-03-19T18:58:39-04:00</lastmod>
   </url><url>
-    <loc>https://hugolooped.pages.dev/tags/proton/</loc>
+    <loc>https://looped.network/tags/proton/</loc>
     <lastmod>2023-03-18T18:57:41-04:00</lastmod>
   </url><url>
-    <loc>https://hugolooped.pages.dev/posts/proton-simplelogin/</loc>
+    <loc>https://looped.network/posts/proton-simplelogin/</loc>
     <lastmod>2023-03-18T18:57:41-04:00</lastmod>
   </url><url>
-    <loc>https://hugolooped.pages.dev/tags/protonmail/</loc>
+    <loc>https://looped.network/tags/protonmail/</loc>
     <lastmod>2023-03-18T18:57:41-04:00</lastmod>
   </url><url>
-    <loc>https://hugolooped.pages.dev/tags/simplelogin/</loc>
+    <loc>https://looped.network/tags/simplelogin/</loc>
     <lastmod>2023-03-18T18:57:41-04:00</lastmod>
   </url><url>
-    <loc>https://hugolooped.pages.dev/posts/decreasing-domains/</loc>
+    <loc>https://looped.network/posts/decreasing-domains/</loc>
     <lastmod>2022-09-26T18:31:27-04:00</lastmod>
   </url><url>
-    <loc>https://hugolooped.pages.dev/tags/dns/</loc>
+    <loc>https://looped.network/tags/dns/</loc>
     <lastmod>2022-09-26T18:31:27-04:00</lastmod>
   </url><url>
-    <loc>https://hugolooped.pages.dev/tags/domains/</loc>
+    <loc>https://looped.network/tags/domains/</loc>
     <lastmod>2022-09-26T18:31:27-04:00</lastmod>
   </url><url>
-    <loc>https://hugolooped.pages.dev/tags/icann/</loc>
+    <loc>https://looped.network/tags/icann/</loc>
     <lastmod>2022-09-26T18:31:27-04:00</lastmod>
   </url><url>
-    <loc>https://hugolooped.pages.dev/tags/corrupt/</loc>
+    <loc>https://looped.network/tags/corrupt/</loc>
     <lastmod>2022-09-17T18:30:30-04:00</lastmod>
   </url><url>
-    <loc>https://hugolooped.pages.dev/posts/manjaro-invalid-corrupt-package/</loc>
+    <loc>https://looped.network/posts/manjaro-invalid-corrupt-package/</loc>
     <lastmod>2022-09-17T18:30:30-04:00</lastmod>
   </url><url>
-    <loc>https://hugolooped.pages.dev/tags/linux/</loc>
+    <loc>https://looped.network/tags/linux/</loc>
     <lastmod>2022-09-17T18:30:30-04:00</lastmod>
   </url><url>
-    <loc>https://hugolooped.pages.dev/tags/manjaro/</loc>
+    <loc>https://looped.network/tags/manjaro/</loc>
     <lastmod>2022-09-17T18:30:30-04:00</lastmod>
   </url><url>
-    <loc>https://hugolooped.pages.dev/posts/ffmpeg-audio-from-video/</loc>
+    <loc>https://looped.network/posts/ffmpeg-audio-from-video/</loc>
     <lastmod>2022-09-14T18:28:19-04:00</lastmod>
   </url><url>
-    <loc>https://hugolooped.pages.dev/tags/ffmpeg/</loc>
+    <loc>https://looped.network/tags/ffmpeg/</loc>
     <lastmod>2022-09-14T18:28:19-04:00</lastmod>
   </url><url>
-    <loc>https://hugolooped.pages.dev/tags/mp3/</loc>
+    <loc>https://looped.network/tags/mp3/</loc>
     <lastmod>2022-09-14T18:28:19-04:00</lastmod>
   </url><url>
-    <loc>https://hugolooped.pages.dev/tags/mp4/</loc>
+    <loc>https://looped.network/tags/mp4/</loc>
     <lastmod>2022-09-14T18:28:19-04:00</lastmod>
   </url><url>
-    <loc>https://hugolooped.pages.dev/tags/kubectl/</loc>
+    <loc>https://looped.network/tags/kubectl/</loc>
     <lastmod>2022-09-10T18:27:23-04:00</lastmod>
   </url><url>
-    <loc>https://hugolooped.pages.dev/posts/kubectl-symbolic-link-error/</loc>
+    <loc>https://looped.network/posts/kubectl-symbolic-link-error/</loc>
     <lastmod>2022-09-10T18:27:23-04:00</lastmod>
   </url><url>
-    <loc>https://hugolooped.pages.dev/tags/kubernetes/</loc>
+    <loc>https://looped.network/tags/kubernetes/</loc>
     <lastmod>2022-09-10T18:27:23-04:00</lastmod>
   </url><url>
-    <loc>https://hugolooped.pages.dev/tags/symbolic-link/</loc>
+    <loc>https://looped.network/tags/symbolic-link/</loc>
     <lastmod>2022-09-10T18:27:23-04:00</lastmod>
   </url><url>
-    <loc>https://hugolooped.pages.dev/tags/kerberos/</loc>
+    <loc>https://looped.network/tags/kerberos/</loc>
     <lastmod>2022-09-07T18:26:27-04:00</lastmod>
   </url><url>
-    <loc>https://hugolooped.pages.dev/tags/keytab/</loc>
+    <loc>https://looped.network/tags/keytab/</loc>
     <lastmod>2022-09-07T18:26:27-04:00</lastmod>
   </url><url>
-    <loc>https://hugolooped.pages.dev/tags/kinit/</loc>
+    <loc>https://looped.network/tags/kinit/</loc>
     <lastmod>2022-09-07T18:26:27-04:00</lastmod>
   </url><url>
-    <loc>https://hugolooped.pages.dev/posts/kinit-keytab-fail/</loc>
+    <loc>https://looped.network/posts/kinit-keytab-fail/</loc>
     <lastmod>2022-09-07T18:26:27-04:00</lastmod>
   </url><url>
-    <loc>https://hugolooped.pages.dev/tags/coc/</loc>
+    <loc>https://looped.network/tags/coc/</loc>
     <lastmod>2022-08-20T18:25:16-04:00</lastmod>
   </url><url>
-    <loc>https://hugolooped.pages.dev/tags/conquer-of-completion/</loc>
+    <loc>https://looped.network/tags/conquer-of-completion/</loc>
     <lastmod>2022-08-20T18:25:16-04:00</lastmod>
   </url><url>
-    <loc>https://hugolooped.pages.dev/tags/neovim/</loc>
+    <loc>https://looped.network/tags/neovim/</loc>
     <lastmod>2022-08-20T18:25:16-04:00</lastmod>
   </url><url>
-    <loc>https://hugolooped.pages.dev/posts/neovim-lsp/</loc>
+    <loc>https://looped.network/posts/neovim-lsp/</loc>
     <lastmod>2022-08-20T18:25:16-04:00</lastmod>
   </url><url>
-    <loc>https://hugolooped.pages.dev/tags/vim-plug/</loc>
+    <loc>https://looped.network/tags/vim-plug/</loc>
     <lastmod>2022-08-20T18:25:16-04:00</lastmod>
   </url><url>
-    <loc>https://hugolooped.pages.dev/tags/alpine/</loc>
+    <loc>https://looped.network/tags/alpine/</loc>
     <lastmod>2022-08-14T18:23:54-04:00</lastmod>
   </url><url>
-    <loc>https://hugolooped.pages.dev/posts/gss-ntlmssp-alpine/</loc>
+    <loc>https://looped.network/posts/gss-ntlmssp-alpine/</loc>
     <lastmod>2022-08-14T18:23:54-04:00</lastmod>
   </url><url>
-    <loc>https://hugolooped.pages.dev/tags/gss-ntlmssp/</loc>
+    <loc>https://looped.network/tags/gss-ntlmssp/</loc>
     <lastmod>2022-08-14T18:23:54-04:00</lastmod>
   </url><url>
-    <loc>https://hugolooped.pages.dev/tags/ntlm/</loc>
+    <loc>https://looped.network/tags/ntlm/</loc>
     <lastmod>2022-08-14T18:23:54-04:00</lastmod>
   </url><url>
-    <loc>https://hugolooped.pages.dev/posts/powershell-import-classes-functions/</loc>
+    <loc>https://looped.network/posts/powershell-import-classes-functions/</loc>
     <lastmod>2022-07-31T18:20:36-04:00</lastmod>
   </url><url>
-    <loc>https://hugolooped.pages.dev/tags/module/</loc>
+    <loc>https://looped.network/tags/module/</loc>
     <lastmod>2022-07-31T18:20:36-04:00</lastmod>
   </url><url>
-    <loc>https://hugolooped.pages.dev/tags/powershell/</loc>
+    <loc>https://looped.network/tags/powershell/</loc>
     <lastmod>2022-07-31T18:20:36-04:00</lastmod>
   </url><url>
-    <loc>https://hugolooped.pages.dev/tags/terraform/</loc>
+    <loc>https://looped.network/tags/terraform/</loc>
     <lastmod>2022-07-05T18:19:08-04:00</lastmod>
   </url><url>
-    <loc>https://hugolooped.pages.dev/tags/terraform-cloud/</loc>
+    <loc>https://looped.network/tags/terraform-cloud/</loc>
     <lastmod>2022-07-05T18:19:08-04:00</lastmod>
   </url><url>
-    <loc>https://hugolooped.pages.dev/posts/terraform-cloud-variables/</loc>
+    <loc>https://looped.network/posts/terraform-cloud-variables/</loc>
     <lastmod>2022-07-05T18:19:08-04:00</lastmod>
   </url><url>
-    <loc>https://hugolooped.pages.dev/categories/</loc>
+    <loc>https://looped.network/categories/</loc>
   </url><url>
-    <loc>https://hugolooped.pages.dev/manifest/index.json</loc>
+    <loc>https://looped.network/manifest/index.json</loc>
   </url><url>
-    <loc>https://hugolooped.pages.dev/search/</loc>
+    <loc>https://looped.network/search/</loc>
   </url>
 </urlset>
