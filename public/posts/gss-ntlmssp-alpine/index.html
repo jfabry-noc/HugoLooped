@@ -36,6 +36,8 @@
 <meta name="author" content="LoopedNetwork" />
 
     
+        <meta name="keywords" content='Alpine, GSS-NTLMSSP, Linux, NTLM' />
+    
     
         <meta name="description" content="elf working on a project which required the GSS-NTLMSSP library. The application is going to be delivered via Kubernetes, so I needed to build a Docker image with this library. The project&amp;rsquo;s build instructions are pretty clear about what the dependencies are, but given that this was going to be a Docker image, I wanted to use Alpine Linux as the base image in order to keep the image size as small as possible." />
     
@@ -51,6 +53,16 @@
     <meta
         property="article:published_time"
         content='2022-08-14T18:23:54Z-0400' />
+    
+        
+            <meta property="article:tag" content="Alpine" />
+        
+            <meta property="article:tag" content="GSS-NTLMSSP" />
+        
+            <meta property="article:tag" content="Linux" />
+        
+            <meta property="article:tag" content="NTLM" />
+        
     
     <meta property="og:url" content="https://hugolooped.pages.dev/posts/gss-ntlmssp-alpine/" />
     
@@ -243,6 +255,29 @@
 <p>Note that <code>git</code> is included just to clone the repo, and <code>build-base</code> is the meta package I used for compiling C software since just installing something like <code>gcc</code> will not include everything needed.</p>
 </div>
 </article>
+
+    <hr />
+    <p class="articleTagsContainer">
+        <span> </span>
+        <strong>Tags:</strong>
+        
+            <a
+                
+                href="/tags/alpine">#Alpine</a>
+        
+            <a
+                
+                href="/tags/gss-ntlmssp">#GSS-NTLMSSP</a>
+        
+            <a
+                
+                href="/tags/linux">#Linux</a>
+        
+            <a
+                
+                href="/tags/ntlm">#NTLM</a>
+        
+    </p>
 
 
 

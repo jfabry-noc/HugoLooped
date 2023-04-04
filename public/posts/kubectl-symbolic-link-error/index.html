@@ -36,6 +36,8 @@
 <meta name="author" content="LoopedNetwork" />
 
     
+        <meta name="keywords" content='kubectl, Kubernetes, symbolic link' />
+    
     
         <meta name="description" content="s an interesting error with my development Kubernetes cluster, and while I still have no idea what I may have done to cause it, I at least figured out how to rectify it. As is commonly the case, most of the things I end up deploying to Kubernetes simply log to standard out so that I can view logs with the kubectl logs command. While running this against a particular deployment, though, I received an error:" />
     
@@ -51,6 +53,14 @@
     <meta
         property="article:published_time"
         content='2022-09-10T18:27:23Z-0400' />
+    
+        
+            <meta property="article:tag" content="kubectl" />
+        
+            <meta property="article:tag" content="Kubernetes" />
+        
+            <meta property="article:tag" content="symbolic link" />
+        
     
     <meta property="og:url" content="https://hugolooped.pages.dev/posts/kubectl-symbolic-link-error/" />
     
@@ -228,6 +238,25 @@
 <p>Sure enough, after creating this I was able to successfully run <code>kubectl logs</code> against the previously broken pod.</p>
 </div>
 </article>
+
+    <hr />
+    <p class="articleTagsContainer">
+        <span> </span>
+        <strong>Tags:</strong>
+        
+            <a
+                
+                href="/tags/kubectl">#kubectl</a>
+        
+            <a
+                
+                href="/tags/kubernetes">#Kubernetes</a>
+        
+            <a
+                
+                href="/tags/symbolic-link">#symbolic link</a>
+        
+    </p>
 
 
 

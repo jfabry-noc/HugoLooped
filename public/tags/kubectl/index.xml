@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>kubectl on LoopedNetwork</title>
+    <link>https://hugolooped.pages.dev/tags/kubectl/</link>
+    <description>Recent content in kubectl on LoopedNetwork</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Copyright 2023 - LoopedNetwork</copyright>
+    <lastBuildDate>Sat, 10 Sep 2022 18:27:23 -0400</lastBuildDate><atom:link href="https://hugolooped.pages.dev/tags/kubectl/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>kubectl logs Symbolic Link Error</title>
+      <link>https://hugolooped.pages.dev/posts/kubectl-symbolic-link-error/</link>
+      <pubDate>Sat, 10 Sep 2022 18:27:23 -0400</pubDate>
+      
+      <guid>https://hugolooped.pages.dev/posts/kubectl-symbolic-link-error/</guid>
+      <description>I recently ran across an interesting error with my development Kubernetes cluster, and while I still have no idea what I may have done to cause it, I at least figured out how to rectify it. As is commonly the case, most of the things I end up deploying to Kubernetes simply log to standard out so that I can view logs with the kubectl logs command. While running this against a particular deployment, though, I received an error:</description>
+    </item>
+    
+  </channel>
+</rss>

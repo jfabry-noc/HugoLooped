@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ffmpeg on LoopedNetwork</title>
+    <link>https://hugolooped.pages.dev/tags/ffmpeg/</link>
+    <description>Recent content in ffmpeg on LoopedNetwork</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Copyright 2023 - LoopedNetwork</copyright>
+    <lastBuildDate>Wed, 14 Sep 2022 18:28:19 -0400</lastBuildDate><atom:link href="https://hugolooped.pages.dev/tags/ffmpeg/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Extracting Audio From Video With FFmpeg</title>
+      <link>https://hugolooped.pages.dev/posts/ffmpeg-audio-from-video/</link>
+      <pubDate>Wed, 14 Sep 2022 18:28:19 -0400</pubDate>
+      
+      <guid>https://hugolooped.pages.dev/posts/ffmpeg-audio-from-video/</guid>
+      <description>Just a few moments ago I needed to extract the audio component out of a video file into some type of standalone audio file, like .mp3. Since I&amp;rsquo;ve been working with Audacity to record audio, I figured maybe it had some capability for ripping it out of video.
+My initial searches gave me results like this which quickly made it clear that while this is technically possible, it requires some add-ins that I didn&amp;rsquo;t really want to mess around with.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>kinit on LoopedNetwork</title>
+    <link>https://hugolooped.pages.dev/tags/kinit/</link>
+    <description>Recent content in kinit on LoopedNetwork</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Copyright 2023 - LoopedNetwork</copyright>
+    <lastBuildDate>Wed, 07 Sep 2022 18:26:27 -0400</lastBuildDate><atom:link href="https://hugolooped.pages.dev/tags/kinit/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>kinit Fails Only When Using Keytab File</title>
+      <link>https://hugolooped.pages.dev/posts/kinit-keytab-fail/</link>
+      <pubDate>Wed, 07 Sep 2022 18:26:27 -0400</pubDate>
+      
+      <guid>https://hugolooped.pages.dev/posts/kinit-keytab-fail/</guid>
+      <description>Lately I&amp;rsquo;ve been working through getting WinRM connectivity working between a Linux container and a bunch of Windows servers. I&amp;rsquo;m using the venerable pywinrm library. It works great, but there was a decent bit of setup for the underlying host to make it work that I had been unfamiliar with; you can&amp;rsquo;t just create a client object, plug in some credentials, and go. A big part of this for my setup was configuring krb5 to be able to speak to Active Directory appropriately.</description>
+    </item>
+    
+  </channel>
+</rss>

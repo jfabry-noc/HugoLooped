@@ -1,6 +1,10 @@
 ---
 title: "kubectl logs Symbolic Link Error"
 date: 2022-09-10T18:27:23-04:00
+tags:
+  - kubectl
+  - Kubernetes
+  - symbolic link
 draft: false
 ---
 

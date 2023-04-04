@@ -36,6 +36,8 @@
 <meta name="author" content="LoopedNetwork" />
 
     
+        <meta name="keywords" content='Kerberos, keytab, kinit' />
+    
     
         <meta name="description" content="en working through getting WinRM connectivity working between a Linux container and a bunch of Windows servers. I&amp;rsquo;m using the venerable pywinrm library. It works great, but there was a decent bit of setup for the underlying host to make it work that I had been unfamiliar with; you can&amp;rsquo;t just create a client object, plug in some credentials, and go. A big part of this for my setup was configuring krb5 to be able to speak to Active Directory appropriately." />
     
@@ -51,6 +53,14 @@
     <meta
         property="article:published_time"
         content='2022-09-07T18:26:27Z-0400' />
+    
+        
+            <meta property="article:tag" content="Kerberos" />
+        
+            <meta property="article:tag" content="keytab" />
+        
+            <meta property="article:tag" content="kinit" />
+        
     
     <meta property="og:url" content="https://hugolooped.pages.dev/posts/kinit-keytab-fail/" />
     
@@ -243,6 +253,25 @@
 <p>If this type of mismatch happens, you can use <code>-s</code> when running <code>addent</code> to specify the salt. After checking AD, I verified in my current case that the username was the same for both properties&hellip; but that in both places it was completely <em>lowercase</em>. I can&rsquo;t say why it was given to me with the first character capitalized, but after re-trying with <strong><a href="mailto:username@SUB.DOMAIN.COM">username@SUB.DOMAIN.COM</a></strong>, everything was successful. This made sense to me because while AD doesn&rsquo;t care about the username&rsquo;s capitalization when it authenticates (hence why manually running <code>kinit</code> and typing the password worked), using a keytab file means that the wrong salt was given.</p>
 </div>
 </article>
+
+    <hr />
+    <p class="articleTagsContainer">
+        <span> </span>
+        <strong>Tags:</strong>
+        
+            <a
+                
+                href="/tags/kerberos">#Kerberos</a>
+        
+            <a
+                
+                href="/tags/keytab">#keytab</a>
+        
+            <a
+                
+                href="/tags/kinit">#kinit</a>
+        
+    </p>
 
 
 

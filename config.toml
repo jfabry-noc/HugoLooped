@@ -1,4 +1,4 @@
-baseURL = "https://hugolooped.pages.dev/"
+baseURL = "https://looped.network/"
 theme = "hugo-ficurinia"
 title = "LoopedNetwork"
 languageCode = "en"

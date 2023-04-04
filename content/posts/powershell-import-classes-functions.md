@@ -1,6 +1,9 @@
 ---
 title: "Importing Functions, Classes, and Methods From Other PowerShell Files"
 date: 2022-07-31T18:20:36-04:00
+tags:
+  - PowerShell
+  - Module
 draft: false
 ---
 

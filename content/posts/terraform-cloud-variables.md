@@ -1,7 +1,10 @@
 ---
-title: "https://looped.network/terraform-cloud-variables-are-all-strings"
+title: "Terraform Cloud Variables Are All Strings"
 date: 2022-07-05T18:19:08-04:00
 draft: false
+tags:
+  - Terraform
+  - Terraform Cloud
 ---
 
 This post easily falls into the “so ridiculous that it shouldn’t be a post” category. However, considering how long I ended up stuck on it earlier today, I figure it’s worth making if it stands a chance of helping even one other person avoid the same fate as me. 😅

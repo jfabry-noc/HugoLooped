@@ -18,6 +18,63 @@
     </item>
     
     <item>
+      <title>Apple Music Classical</title>
+      <link>https://hugolooped.pages.dev/posts/apple-music-classical/</link>
+      <pubDate>Mon, 03 Apr 2023 19:11:24 -0400</pubDate>
+      
+      <guid>https://hugolooped.pages.dev/posts/apple-music-classical/</guid>
+      <description>Last week Apple released Apple Music Classical, a variant of their Apple Music streaming service (and which operates off of the same subscription) but that only contains classical music. While I&amp;rsquo;m no expert by any stretch, I&amp;rsquo;m actually a bit of a classical music fan. It&amp;rsquo;s something I turn to frequently when I want music without any lyrics (e.g. when I&amp;rsquo;m reading or trying to focus on something for work.) My car&amp;rsquo;s stereo is even always tuned to the local classical music station, though I typically only listen to it for a few moments until Bluetooth connects.</description>
+    </item>
+    
+    <item>
+      <title>Site Design Update</title>
+      <link>https://hugolooped.pages.dev/posts/site-design-update/</link>
+      <pubDate>Sat, 01 Apr 2023 19:09:21 -0400</pubDate>
+      
+      <guid>https://hugolooped.pages.dev/posts/site-design-update/</guid>
+      <description>Note: This post is no longer accurate since the site has moved from Write.as. However, here&amp;rsquo;s a screenshot of what it looked like at the time; I was quite happy with it!
+The entire time this particular site has been in existence at Write.as, I&amp;rsquo;ve used the Carbontwelve theme for it. It&amp;rsquo;s a fairly slick theme with some nice effects; I&amp;rsquo;ve been fairly happy with it. My only real issue is that it&amp;rsquo;s a light theme, which I (more or less) never use for anything given the option.</description>
+    </item>
+    
+    <item>
+      <title>Home Office Upgrade</title>
+      <link>https://hugolooped.pages.dev/posts/home-office-upgrade/</link>
+      <pubDate>Fri, 31 Mar 2023 19:06:26 -0400</pubDate>
+      
+      <guid>https://hugolooped.pages.dev/posts/home-office-upgrade/</guid>
+      <description>In a move that was highly overdue, I finally redid my home office several weeks ago. It&amp;rsquo;s actually embarrassing to share, but this is what it had looked like prior to the overhaul&amp;hellip; not that I would even call this an office:
+Background Saying that the desk is small is an understatement. I&amp;rsquo;ve actually owned this desk for years, and the story behind it is that I needed a small desk at my previous apartment.</description>
+    </item>
+    
+    <item>
+      <title>I Want Functional Scrollbars</title>
+      <link>https://hugolooped.pages.dev/posts/functional-scrollbars/</link>
+      <pubDate>Sat, 25 Mar 2023 19:02:01 -0400</pubDate>
+      
+      <guid>https://hugolooped.pages.dev/posts/functional-scrollbars/</guid>
+      <description>Lately I&amp;rsquo;ve been lamenting the death of the functional scrollbar. Remember back in the day when scrollbars looked like this?
+The scrollbars were prominent because they were meant to be used. You were expected to grab one with your mouse and move it up and down. Today, scrollbars have a much different appearance and expectation of functionality. This is what they look like in Firefox on Gnome 43 running under Fedora 37:</description>
+    </item>
+    
+    <item>
+      <title>Trying T-Mobile Home Internet</title>
+      <link>https://hugolooped.pages.dev/posts/tmobile-home-internet/</link>
+      <pubDate>Sun, 19 Mar 2023 18:58:39 -0400</pubDate>
+      
+      <guid>https://hugolooped.pages.dev/posts/tmobile-home-internet/</guid>
+      <description>For the majority of my life, I&amp;rsquo;ve only had one Internet service provider where I lived. That was originally just a single dial-up provider when I was growing up to only having one coaxial cable provider at 4 different apartments in the span of 11 years. That recently changed when I went from having a single provider (coax) where I&amp;rsquo;m currently at to having 3 providers (coax, 5G, and fiber.)</description>
+    </item>
+    
+    <item>
+      <title>Proton and SimpleLogin</title>
+      <link>https://hugolooped.pages.dev/posts/proton-simplelogin/</link>
+      <pubDate>Sat, 18 Mar 2023 18:57:41 -0400</pubDate>
+      
+      <guid>https://hugolooped.pages.dev/posts/proton-simplelogin/</guid>
+      <description>While going down a rabbit hole on Mastodon the other day, I stumbled across a post from SimpleLogin saying that they were now a part of the Proton family. I&amp;rsquo;ve been a fan of ProtonMail for a long time, and now also use both Proton Drive and Proton Calendar regularly (especially now that they have iOS apps.) While I&amp;rsquo;ve not used a lot of email alias services like this before, I have used the one Apple offers through iCloud.</description>
+    </item>
+    
+    <item>
       <title>Decreasing Domains</title>
       <link>https://hugolooped.pages.dev/posts/decreasing-domains/</link>
       <pubDate>Mon, 26 Sep 2022 18:31:27 -0400</pubDate>
@@ -94,7 +151,7 @@ My initial searches gave me results like this which quickly made it clear that w
     </item>
     
     <item>
-      <title>https://looped.network/terraform-cloud-variables-are-all-strings</title>
+      <title>Terraform Cloud Variables Are All Strings</title>
       <link>https://hugolooped.pages.dev/posts/terraform-cloud-variables/</link>
       <pubDate>Tue, 05 Jul 2022 18:19:08 -0400</pubDate>
       

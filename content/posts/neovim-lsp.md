@@ -1,6 +1,11 @@
 ---
 title: "Real Time Error Checking and Code Completion With Neovim"
 date: 2022-08-20T18:25:16-04:00
+tags:
+  - Neovim
+  - Coc
+  - Conquer of Completion
+  - vim-plug
 draft: false
 ---
 

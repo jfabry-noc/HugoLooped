@@ -1,6 +1,10 @@
 ---
 title: "Extracting Audio From Video With FFmpeg"
 date: 2022-09-14T18:28:19-04:00
+tags:
+  - ffmpeg
+  - MP3
+  - MP4
 draft: false
 ---
 

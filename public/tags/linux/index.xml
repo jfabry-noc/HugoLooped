@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Linux on LoopedNetwork</title>
+    <link>https://hugolooped.pages.dev/tags/linux/</link>
+    <description>Recent content in Linux on LoopedNetwork</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Copyright 2023 - LoopedNetwork</copyright>
+    <lastBuildDate>Sat, 17 Sep 2022 18:30:30 -0400</lastBuildDate><atom:link href="https://hugolooped.pages.dev/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Fixing Manjaro Linux Invalid Or Corrupt Package Error</title>
+      <link>https://hugolooped.pages.dev/posts/manjaro-invalid-corrupt-package/</link>
+      <pubDate>Sat, 17 Sep 2022 18:30:30 -0400</pubDate>
+      
+      <guid>https://hugolooped.pages.dev/posts/manjaro-invalid-corrupt-package/</guid>
+      <description>As the title alludes to, this morning I tried updating my Pinebook Pro running Manjaro Linux through my normal method:
+sudo pacman -Syu Today, this resulted in an error message about the libibus package:
+ warning: could not fully load metadata for package libibus-1.5.26-2 error: failed to prepare transaction (invalid or corrupted package)
+ Fun. I first wanted to see if it was really just this package that was causing the problem or if there were other issues.</description>
+    </item>
+    
+    <item>
+      <title>Compiling GSS-NTLMSSP For Alpine Linux</title>
+      <link>https://hugolooped.pages.dev/posts/gss-ntlmssp-alpine/</link>
+      <pubDate>Sun, 14 Aug 2022 18:23:54 -0400</pubDate>
+      
+      <guid>https://hugolooped.pages.dev/posts/gss-ntlmssp-alpine/</guid>
+      <description>I recently found myself working on a project which required the GSS-NTLMSSP library. The application is going to be delivered via Kubernetes, so I needed to build a Docker image with this library. The project&amp;rsquo;s build instructions are pretty clear about what the dependencies are, but given that this was going to be a Docker image, I wanted to use Alpine Linux as the base image in order to keep the image size as small as possible.</description>
+    </item>
+    
+  </channel>
+</rss>

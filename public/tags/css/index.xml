@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>CSS on LoopedNetwork</title>
+    <link>https://hugolooped.pages.dev/tags/css/</link>
+    <description>Recent content in CSS on LoopedNetwork</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Copyright 2023 - LoopedNetwork</copyright>
+    <lastBuildDate>Sat, 01 Apr 2023 19:09:21 -0400</lastBuildDate><atom:link href="https://hugolooped.pages.dev/tags/css/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Site Design Update</title>
+      <link>https://hugolooped.pages.dev/posts/site-design-update/</link>
+      <pubDate>Sat, 01 Apr 2023 19:09:21 -0400</pubDate>
+      
+      <guid>https://hugolooped.pages.dev/posts/site-design-update/</guid>
+      <description>Note: This post is no longer accurate since the site has moved from Write.as. However, here&amp;rsquo;s a screenshot of what it looked like at the time; I was quite happy with it!
+The entire time this particular site has been in existence at Write.as, I&amp;rsquo;ve used the Carbontwelve theme for it. It&amp;rsquo;s a fairly slick theme with some nice effects; I&amp;rsquo;ve been fairly happy with it. My only real issue is that it&amp;rsquo;s a light theme, which I (more or less) never use for anything given the option.</description>
+    </item>
+    
+  </channel>
+</rss>

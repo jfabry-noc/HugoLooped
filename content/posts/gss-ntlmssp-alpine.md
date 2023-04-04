@@ -1,6 +1,11 @@
 ---
 title: "Compiling GSS-NTLMSSP For Alpine Linux"
 date: 2022-08-14T18:23:54-04:00
+tags:
+  - GSS-NTLMSSP
+  - NTLM
+  - Alpine
+  - Linux
 draft: false
 ---
 

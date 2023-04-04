@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>PowerShell on LoopedNetwork</title>
+    <link>https://hugolooped.pages.dev/tags/powershell/</link>
+    <description>Recent content in PowerShell on LoopedNetwork</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Copyright 2023 - LoopedNetwork</copyright>
+    <lastBuildDate>Sun, 31 Jul 2022 18:20:36 -0400</lastBuildDate><atom:link href="https://hugolooped.pages.dev/tags/powershell/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Importing Functions, Classes, and Methods From Other PowerShell Files</title>
+      <link>https://hugolooped.pages.dev/posts/powershell-import-classes-functions/</link>
+      <pubDate>Sun, 31 Jul 2022 18:20:36 -0400</pubDate>
+      
+      <guid>https://hugolooped.pages.dev/posts/powershell-import-classes-functions/</guid>
+      <description>I&amp;rsquo;ve recently been working on a project that requires me to use PowerShell. I actually feel relatively fluent in PowerShell since it was my main scripting language for a little over a decade while I worked as a sysadmin in highly Windows-centric environments that involved me automating as much of my job as possible in order to be able to do things like sleep on occasion. However, my PowerShell work rarely (read: never) went beyond single file scripts.</description>
+    </item>
+    
+  </channel>
+</rss>

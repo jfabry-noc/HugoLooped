@@ -1,6 +1,10 @@
 ---
 title: "Fixing Manjaro Linux Invalid Or Corrupt Package Error"
 date: 2022-09-17T18:30:30-04:00
+tags:
+  - Manjaro
+  - Linux
+  - Corrupt
 draft: false
 ---
 

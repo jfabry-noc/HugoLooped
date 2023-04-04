@@ -1,6 +1,8 @@
 ---
 title: "Google Voice Redefining Idle"
 date: 2023-10-09T18:34:58-04:00
+tags:
+  - Google Voice
 draft: false
 ---
 

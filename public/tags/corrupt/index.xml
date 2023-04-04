@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Corrupt on LoopedNetwork</title>
+    <link>https://hugolooped.pages.dev/tags/corrupt/</link>
+    <description>Recent content in Corrupt on LoopedNetwork</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Copyright 2023 - LoopedNetwork</copyright>
+    <lastBuildDate>Sat, 17 Sep 2022 18:30:30 -0400</lastBuildDate><atom:link href="https://hugolooped.pages.dev/tags/corrupt/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Fixing Manjaro Linux Invalid Or Corrupt Package Error</title>
+      <link>https://hugolooped.pages.dev/posts/manjaro-invalid-corrupt-package/</link>
+      <pubDate>Sat, 17 Sep 2022 18:30:30 -0400</pubDate>
+      
+      <guid>https://hugolooped.pages.dev/posts/manjaro-invalid-corrupt-package/</guid>
+      <description>As the title alludes to, this morning I tried updating my Pinebook Pro running Manjaro Linux through my normal method:
+sudo pacman -Syu Today, this resulted in an error message about the libibus package:
+ warning: could not fully load metadata for package libibus-1.5.26-2 error: failed to prepare transaction (invalid or corrupted package)
+ Fun. I first wanted to see if it was really just this package that was causing the problem or if there were other issues.</description>
+    </item>
+    
+  </channel>
+</rss>

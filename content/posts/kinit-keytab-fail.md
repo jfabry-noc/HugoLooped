@@ -1,6 +1,10 @@
 ---
 title: "kinit Fails Only When Using Keytab File"
 date: 2022-09-07T18:26:27-04:00
+tags:
+  - kinit
+  - keytab
+  - Kerberos
 draft: false
 ---
 
