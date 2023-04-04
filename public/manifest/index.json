@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json.schemastore.org/web-manifest-combined.json",
+  "name": "LoopedNetwork",
+  "short_name": "LoopedNetwork",
+  "start_url": "/",
+  "display": "standalone",
+  
+  
+  
+  "background_color": "#242629",
+  "theme_color": "#db5793"
+  
+    ,
+    "description": "The /dev/null of my life"
+  
+  
+}
+

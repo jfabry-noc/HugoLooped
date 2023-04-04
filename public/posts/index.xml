@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on LoopedNetwork</title>
+    <link>https://looped.network/posts/</link>
+    <description>Recent content in Posts on LoopedNetwork</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Copyright 2023 - LoopedNetwork &lt;a rel=&#39;me&#39; href=&#39;https://mastodon.online/@looped_network&#39;&gt;.&lt;/a&gt;</copyright>
+    <lastBuildDate>Tue, 04 Apr 2023 18:12:18 -0400</lastBuildDate><atom:link href="https://looped.network/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Back to Hugo</title>
+      <link>https://looped.network/posts/back-to-hugo/</link>
+      <pubDate>Tue, 04 Apr 2023 18:12:18 -0400</pubDate>
+      
+      <guid>https://looped.network/posts/back-to-hugo/</guid>
+      <description>Now I&amp;rsquo;m using Hugo again. Have an image.</description>
+    </item>
+    
+    <item>
+      <title>Decreasing Domains</title>
+      <link>https://looped.network/posts/decreasing-domains/</link>
+      <pubDate>Mon, 26 Sep 2022 18:31:27 -0400</pubDate>
+      
+      <guid>https://looped.network/posts/decreasing-domains/</guid>
+      <description>It just dawned on me that I&amp;rsquo;ve finally made good progress in decreasing the number of domains that I own. I&amp;rsquo;ve historically purchased domains on a whim; when I&amp;rsquo;m bored or sitting on a bar stool somewhere, I&amp;rsquo;ll grab my phone and check if random domains that pop into my head are available. While the overwhelming majority of them would be taken, I&amp;rsquo;d occasionally strike upon something that hadn&amp;rsquo;t been snatched up.</description>
+    </item>
+    
+    <item>
+      <title>Fixing Manjaro Linux Invalid Or Corrupt Package Error</title>
+      <link>https://looped.network/posts/manjaro-invalid-corrupt-package/</link>
+      <pubDate>Sat, 17 Sep 2022 18:30:30 -0400</pubDate>
+      
+      <guid>https://looped.network/posts/manjaro-invalid-corrupt-package/</guid>
+      <description>As the title alludes to, this morning I tried updating my Pinebook Pro running Manjaro Linux through my normal method:
+sudo pacman -Syu Today, this resulted in an error message about the libibus package:
+ warning: could not fully load metadata for package libibus-1.5.26-2 error: failed to prepare transaction (invalid or corrupted package)
+ Fun. I first wanted to see if it was really just this package that was causing the problem or if there were other issues.</description>
+    </item>
+    
+    <item>
+      <title>Extracting Audio From Video With FFmpeg</title>
+      <link>https://looped.network/posts/ffmpeg-audio-from-video/</link>
+      <pubDate>Wed, 14 Sep 2022 18:28:19 -0400</pubDate>
+      
+      <guid>https://looped.network/posts/ffmpeg-audio-from-video/</guid>
+      <description>Just a few moments ago I needed to extract the audio component out of a video file into some type of standalone audio file, like .mp3. Since I&amp;rsquo;ve been working with Audacity to record audio, I figured maybe it had some capability for ripping it out of video.
+My initial searches gave me results like this which quickly made it clear that while this is technically possible, it requires some add-ins that I didn&amp;rsquo;t really want to mess around with.</description>
+    </item>
+    
+    <item>
+      <title>kubectl logs Symbolic Link Error</title>
+      <link>https://looped.network/posts/kubectl-symbolic-link-error/</link>
+      <pubDate>Sat, 10 Sep 2022 18:27:23 -0400</pubDate>
+      
+      <guid>https://looped.network/posts/kubectl-symbolic-link-error/</guid>
+      <description>I recently ran across an interesting error with my development Kubernetes cluster, and while I still have no idea what I may have done to cause it, I at least figured out how to rectify it. As is commonly the case, most of the things I end up deploying to Kubernetes simply log to standard out so that I can view logs with the kubectl logs command. While running this against a particular deployment, though, I received an error:</description>
+    </item>
+    
+    <item>
+      <title>kinit Fails Only When Using Keytab File</title>
+      <link>https://looped.network/posts/kinit-keytab-fail/</link>
+      <pubDate>Wed, 07 Sep 2022 18:26:27 -0400</pubDate>
+      
+      <guid>https://looped.network/posts/kinit-keytab-fail/</guid>
+      <description>Lately I&amp;rsquo;ve been working through getting WinRM connectivity working between a Linux container and a bunch of Windows servers. I&amp;rsquo;m using the venerable pywinrm library. It works great, but there was a decent bit of setup for the underlying host to make it work that I had been unfamiliar with; you can&amp;rsquo;t just create a client object, plug in some credentials, and go. A big part of this for my setup was configuring krb5 to be able to speak to Active Directory appropriately.</description>
+    </item>
+    
+    <item>
+      <title>Real Time Error Checking and Code Completion With Neovim</title>
+      <link>https://looped.network/posts/neovim-lsp/</link>
+      <pubDate>Sat, 20 Aug 2022 18:25:16 -0400</pubDate>
+      
+      <guid>https://looped.network/posts/neovim-lsp/</guid>
+      <description>I had written a few months ago on Medium that I was trying to switch from using VS Code as my main editor to Vim. As I mentioned in that post, I&amp;rsquo;ve used Vim for years now, but never as my &amp;ldquo;main&amp;rdquo; editor for when I need to get serious work done, such as with my job. I also swapped from vanilla Vim to Neovim, which I found to have a few quality of life improvements that I enjoyed.</description>
+    </item>
+    
+    <item>
+      <title>Compiling GSS-NTLMSSP For Alpine Linux</title>
+      <link>https://looped.network/posts/gss-ntlmssp-alpine/</link>
+      <pubDate>Sun, 14 Aug 2022 18:23:54 -0400</pubDate>
+      
+      <guid>https://looped.network/posts/gss-ntlmssp-alpine/</guid>
+      <description>I recently found myself working on a project which required the GSS-NTLMSSP library. The application is going to be delivered via Kubernetes, so I needed to build a Docker image with this library. The project&amp;rsquo;s build instructions are pretty clear about what the dependencies are, but given that this was going to be a Docker image, I wanted to use Alpine Linux as the base image in order to keep the image size as small as possible.</description>
+    </item>
+    
+    <item>
+      <title>Importing Functions, Classes, and Methods From Other PowerShell Files</title>
+      <link>https://looped.network/posts/powershell-import-classes-functions/</link>
+      <pubDate>Sun, 31 Jul 2022 18:20:36 -0400</pubDate>
+      
+      <guid>https://looped.network/posts/powershell-import-classes-functions/</guid>
+      <description>I&amp;rsquo;ve recently been working on a project that requires me to use PowerShell. I actually feel relatively fluent in PowerShell since it was my main scripting language for a little over a decade while I worked as a sysadmin in highly Windows-centric environments that involved me automating as much of my job as possible in order to be able to do things like sleep on occasion. However, my PowerShell work rarely (read: never) went beyond single file scripts.</description>
+    </item>
+    
+    <item>
+      <title>https://looped.network/terraform-cloud-variables-are-all-strings</title>
+      <link>https://looped.network/posts/terraform-cloud-variables/</link>
+      <pubDate>Tue, 05 Jul 2022 18:19:08 -0400</pubDate>
+      
+      <guid>https://looped.network/posts/terraform-cloud-variables/</guid>
+      <description>This post easily falls into the “so ridiculous that it shouldn’t be a post” category. However, considering how long I ended up stuck on it earlier today, I figure it’s worth making if it stands a chance of helping even one other person avoid the same fate as me. 😅
+I’ve started doing a little bit of work with the Terraform Cloud API. Specifically, I was looking at being able to update a workspace variable through code.</description>
+    </item>
+    
+  </channel>
+</rss>

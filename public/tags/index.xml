@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on LoopedNetwork</title>
+    <link>https://looped.network/tags/</link>
+    <description>Recent content in Tags on LoopedNetwork</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Copyright 2023 - LoopedNetwork &lt;a rel=&#39;me&#39; href=&#39;https://mastodon.online/@looped_network&#39;&gt;.&lt;/a&gt;</copyright><atom:link href="https://looped.network/tags/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>

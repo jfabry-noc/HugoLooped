@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Pages on LoopedNetwork</title>
+    <link>https://looped.network/pages/</link>
+    <description>Recent content in Pages on LoopedNetwork</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Copyright 2023 - LoopedNetwork &lt;a rel=&#39;me&#39; href=&#39;https://mastodon.online/@looped_network&#39;&gt;.&lt;/a&gt;</copyright>
+    <lastBuildDate>Tue, 04 Apr 2023 18:16:50 -0400</lastBuildDate><atom:link href="https://looped.network/pages/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>About</title>
+      <link>https://looped.network/pages/about/</link>
+      <pubDate>Tue, 04 Apr 2023 18:16:50 -0400</pubDate>
+      
+      <guid>https://looped.network/pages/about/</guid>
+      <description>I&amp;rsquo;m a software developer (Python, C#, Groovy) with a background in DevOps (Puppet, K8s, Terraform), networking (FortiNet, Cradlepoint), and systems administration (Active Directory, DNS, DHCP.) I used to blog very regularly for years before giving it up for a while, so we&amp;rsquo;ll see how long it lasts this time. In the meantime, you can also find me at:
+ GitHub Mastodon Goodreads WakaTime  </description>
+    </item>
+    
+  </channel>
+</rss>
