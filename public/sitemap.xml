@@ -2,13 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://looped.network/pages/about/</loc>
-    <lastmod>2023-04-04T18:16:50-04:00</lastmod>
-  </url><url>
-    <loc>https://looped.network/</loc>
-    <lastmod>2023-04-04T18:16:50-04:00</lastmod>
-  </url><url>
-    <loc>https://looped.network/pages/</loc>
+    <loc>https://looped.network/about/</loc>
     <lastmod>2023-04-04T18:16:50-04:00</lastmod>
   </url><url>
     <loc>https://looped.network/posts/back-to-hugo/</loc>
@@ -21,6 +15,9 @@
     <lastmod>2023-04-04T18:12:18-04:00</lastmod>
   </url><url>
     <loc>https://looped.network/tags/hugo/</loc>
+    <lastmod>2023-04-04T18:12:18-04:00</lastmod>
+  </url><url>
+    <loc>https://looped.network/</loc>
     <lastmod>2023-04-04T18:12:18-04:00</lastmod>
   </url><url>
     <loc>https://looped.network/posts/</loc>
