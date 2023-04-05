@@ -213,5 +213,9 @@
     <lastmod>2022-07-05T18:19:08-04:00</lastmod>
   </url><url>
     <loc>https://looped.network/categories/</loc>
+  </url><url>
+    <loc>https://looped.network/manifest/index.json</loc>
+  </url><url>
+    <loc>https://looped.network/search/</loc>
   </url>
 </urlset>

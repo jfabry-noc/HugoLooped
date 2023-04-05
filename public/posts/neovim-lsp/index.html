@@ -1,165 +1,226 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  
-    <title>Real Time Error Checking and Code Completion With Neovim :: LoopedNetwork</title>
-  
-  <meta http-equiv="content-type" content="text/html; charset=utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="I had written a few months ago on Medium that I was trying to switch from using VS Code as my main editor to Vim. As I mentioned in that post, I&amp;rsquo;ve used Vim for years now, but never as my &amp;ldquo;main&amp;rdquo; editor for when I need to get serious work done, such as with my job. I also swapped from vanilla Vim to Neovim, which I found to have a few quality of life improvements that I enjoyed." />
-<meta name="keywords" content="" />
+<html class="" lang="en"><head>
+    
+    <meta name="viewport" content="width=device-width" />
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=7" />
 
-  <meta name="robots" content="noodp" />
+    <link
+    rel="icon"
+    href='/favicon.png'
+/>
+<link
+    rel="shortcut icon"
+    href='/favicon.ico'
+    type="image/x-icon"
+/>
+<link
+    rel="apple-touch-icon"
+    href='/apple-touch-icon.png'
+/>
 
-<link rel="canonical" href="https://looped.network/posts/neovim-lsp/" />
+<title>
+        
+            Real Time Error Checking and Code Completion With Neovim  &ndash;
+        
+        LoopedNetwork
+    </title>
+
+    
+    <link href="/symbols-nerd-font/symbols-nerd-font.css" rel="stylesheet" integrity="sha512-lydow8GLOLlYNOtHlksNCmGWWCBsbIEtikXpHzfWqx78HLlyQZHOzyLwPpKol4Th6aCwLUXOfODVYgwrd3nwKQ=="/>
+    <link href="/jetbrains-mono/jetbrains-mono.css" rel="stylesheet" integrity="sha512-tJxlgL6v1Y7kFf+qB8SloaAMKnOAw6WouknxXtIjkBux9Y/9aX81EUWOJO8c/3l98DmjG8brr4to7zaez606Fg=="/>
+
+    
+    
+    <link type="text/css" rel="stylesheet" href=https://looped.network/css/styles.abbd6311bb4b6ca58f8e7398140529245ae0f6428b759fcd830742eee2619eabb900ba9914a9affb82aa9a16a9b9ea727bb315315a976a0db0e7513a5f12c504.css integrity="sha512-q71jEbtLbKWPjnOYFAUpJFrg9kKLdZ/NgwdC7uJhnqu5ALqZFKmv&#43;4Kqmhapuepye7MVMVqXag2w51E6XxLFBA==" />
+<meta name="author" content="LoopedNetwork" />
+
+    
+        <meta name="keywords" content='Coc, Conquer of Completion, Neovim, vim-plug' />
+    
+    
+        <meta name="description" content="months ago on Medium that I was trying to switch from using VS Code as my main editor to Vim. As I mentioned in that post, I&amp;rsquo;ve used Vim for years now, but never as my &amp;ldquo;main&amp;rdquo; editor for when I need to get serious work done, such as with my job. I also swapped from vanilla Vim to Neovim, which I found to have a few quality of life improvements that I enjoyed." />
+    
+
+<meta property="og:site_name"
+    content='LoopedNetwork' />
+
+    <meta property="og:title" content="Real Time Error Checking and Code Completion With Neovim" />
+    <meta property="og:type" content="article" />
+    
+    <meta
+        property="article:author" content="LoopedNetwork" />
+    <meta
+        property="article:published_time"
+        content='2022-08-20T18:25:16Z-0400' />
+    
+        
+            <meta property="article:tag" content="Coc" />
+        
+            <meta property="article:tag" content="Conquer of Completion" />
+        
+            <meta property="article:tag" content="Neovim" />
+        
+            <meta property="article:tag" content="vim-plug" />
+        
+    
+    <meta property="og:url" content="https://looped.network/posts/neovim-lsp/" />
+    
+    
+    <meta property="og:image"
+        content="https://looped.network/img/icon.svg" />
+    
+        <meta property="og:description" content="I had written a few months ago on Medium that I was trying to switch from using VS Code as my main editor to Vim. As I mentioned in that post, I&amp;rsquo;ve used V" />
+    
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:domain"
+      content='looped.network'
+/>
+<meta property="twitter:url" content="https://looped.network/posts/neovim-lsp/" />
 
 
+    <meta name="twitter:title" content="Real Time Error Checking and Code Completion With Neovim" />
+    
+    
+    
+    <meta name="twitter:image"
+        content="https://looped.network/img/icon.svg" />
+    
+        <meta name="twitter:description" content="I had written a few months ago on Medium that I was trying to switch from using VS Code as my main editor to Vim. As I mentioned in that post, I&amp;rsquo;ve used V" />
+    
 
-
-
-
-  
-  
-  
-  
-  
-  <link rel="stylesheet" href="https://looped.network/styles.css">
-
-
-
-
-
-
-
-  <link rel="shortcut icon" href="https://looped.network/favicon.ico">
-
-
-
-<meta name="twitter:card" content="summary" />
-
-
-
-<meta property="og:locale" content="en" />
-<meta property="og:type" content="article" />
-<meta property="og:title" content="Real Time Error Checking and Code Completion With Neovim">
-<meta property="og:description" content="I had written a few months ago on Medium that I was trying to switch from using VS Code as my main editor to Vim. As I mentioned in that post, I&amp;rsquo;ve used Vim for years now, but never as my &amp;ldquo;main&amp;rdquo; editor for when I need to get serious work done, such as with my job. I also swapped from vanilla Vim to Neovim, which I found to have a few quality of life improvements that I enjoyed." />
-<meta property="og:url" content="https://looped.network/posts/neovim-lsp/" />
-<meta property="og:site_name" content="LoopedNetwork" />
-
-  
-    <meta property="og:image" content="https://looped.network/favicon.ico">
-  
-
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="627">
-
-
-  <meta property="article:published_time" content="2022-08-20 18:25:16 -0400 EDT" />
-
-
-
-
-
-
-
-
-
-
-
-
+<link rel="manifest" href="/manifest/index.json" />
 </head>
-<body class="pink">
 
 
-<div class="container headings--one-size">
+<body>
+        <div id="baseContainer"><header class="">
+<div class="titleAndSearchContainer">
+        <div id="titleContainer">
+            
+                <a class="unstyledLink" href="/">
+                    <img src='/logo.svg' alt='Logo'/>
+                </a>
+            
+            <div class="rightOfLogo">
+                <div class="titleAndHamburger">
+                    <h1>
+                        <a class="unstyledLink" href="/">LoopedNetwork</a>
+                        
+                    </h1>
+                    
+                </div>
+                <div id="wide_nav"><nav>
+    
+    <ul id="main-nav">
+        <li><a href="/">Home</a></li>
+        
+            <li><a href="/posts">Posts</a></li>
+        
+        
+        
+        
+        
+        
+            <li><a href="/about/">About</a></li>
+        
+        
+            <li><a href="/tags">Tags</a></li>
+        
+        
+    </ul>
+</nav>
+</div>
+            </div>
+        </div>
+        <div class="search">
+    <input id="searchbar" type="text" placeholder='Search' />
+    <a class="nerdlink" onclick="newSearch();">&#xf002;</a>
+</div>
+<script>
+    function newSearch() {
+        let term = searchbar.value.trim();
+        if (!term) return;
+        location.href = `/search?q=${term}`;
+    }
+    searchbar.onkeyup = (ev) => {if (ev.keyCode == 13) newSearch()};
+</script>
 
-  <header class="header">
-  <div class="header__inner">
-    <div class="header__logo">
-      <a href="/">
-  <div class="logo">
-    LoopedNetwork
-  </div>
+    </div>
+    <div id="links">
+        <a
+    
+        rel="noreferrer"
+    
+    target="_blank"
+    class="nerdlink"
+    href="/index.xml">
+    
+    
+        &#xf09e;
+    
+    <span>
+        RSS
+    </span>
+</a>
+
+        
+        <a
+    
+        rel="noreferrer"
+    
+    target="_blank"
+    class="nerdlink"
+    href="https://github.com/jfabry-noc">
+    
+    
+        &#xf09b;
+    
+    <span>
+        GitHub
+    </span>
+</a>
+<a
+    
+        rel="me"
+    
+    target="_blank"
+    class="nerdlink"
+    href="https://mastodon.online/@looped_network">
+    
+    
+        <svg class='pseudofont' xmlns:svg='http://www.w3.org/2000/svg' width='16' height='16' viewbox='0 0 16 16'><path d='M 7.4779094,-1.598624e-6 C 5.5602384,0.0156984 3.7155894,0.2233384 2.6405814,0.7170384 c 0,0 -2.13206093,0.9537 -2.13206093,4.20766 0,0.74512 -0.01448,1.63603 0.0091,2.58084 0.07742,3.1821946 0.58336693,6.3183886 3.52553593,7.0971276 1.356568,0.359063 2.521335,0.434289 3.45936,0.382729 1.701085,-0.09431 2.6560206,-0.607063 2.6560206,-0.607063 l -0.05611,-1.234252 c 0,0 -1.2156316,0.383272 -2.5808476,0.33656 -1.352609,-0.04639 -2.780561,-0.145832 -2.999328,-1.80651 -0.0202,-0.145872 -0.03031,-0.301902 -0.03031,-0.465714 0,-10e-7 1.327834,0.324572 3.010574,0.40167 1.028943,0.0472 1.993827,-0.06028 2.9738766,-0.177218 1.879445,-0.224425 3.515901,-1.382448 3.721577,-2.4405646 0.32407,-1.666815 0.297376,-4.067605 0.297376,-4.067605 0,-3.25396 -2.131943,-4.20766 -2.131943,-4.20766 C 11.288476,0.2233384 9.4426784,0.0156784 7.5250084,-1.598624e-6 Z M 5.3076104,2.5424984 c 0.798781,0 1.403595,0.30701 1.803551,0.92113 l 0.388886,0.65181 0.388884,-0.65181 c 0.399875,-0.61412 1.00469,-0.92113 1.803551,-0.92113 0.6903266,0 1.2465526,0.24267 1.6713186,0.71609 0.411755,0.47342 0.61677,1.11337 0.61677,1.91862 v 3.939988 h -1.560986 v -3.824218 c 0,-0.80613 -0.339166,-1.21531 -1.0176126,-1.21531 -0.750129,0 -1.126049,0.48533 -1.126049,1.44509 v 2.09324 h -1.551753 v -2.09324 c 0,-0.95976 -0.376039,-1.44509 -1.126168,-1.44509 -0.678446,0 -1.017613,0.40918 -1.017613,1.21531 v 3.824218 h -1.560985 v -3.939988 c 0,-0.80525 0.205053,-1.4452 0.616889,-1.91862 0.424685,-0.47342 0.980911,-0.71609 1.671317,-0.71609 z' /></svg>
+    
+    <span>
+        Mastodon
+    </span>
 </a>
 
     </div>
     
-      <ul class="menu menu--mobile">
-  <li class="menu__trigger">Menu&nbsp;▾</li>
-  <li>
-    <ul class="menu__dropdown">
-      
-        
-          <li><a href="/about">About</a></li>
-        
-      
-      
-    </ul>
-  </li>
-</ul>
 
-    
-    
-  </div>
-  
-    <nav class="navigation-menu">
-  <ul class="navigation-menu__inner menu--desktop">
-    
-      
-        
-          <li><a href="/about">About</a></li>
-        
-      
-      
-    
-  </ul>
-</nav>
-
-  
 </header>
-
-
-  <div class="content">
+<div id="contentContainer">
+                <div id="content">
+                    <main>
+<article class="card single">
     
-<article class="post">
-  <h1 class="post-title">
-    <a href="https://looped.network/posts/neovim-lsp/">Real Time Error Checking and Code Completion With Neovim</a>
-  </h1>
-  <div class="post-meta">
-    
-      <time class="post-date">
-        2022-08-20 ::
-        
-      </time>
+        <h1>Real Time Error Checking and Code Completion With Neovim</h1>
     
     
+        <p class="date">
+            <span title='Date'> </span>
+    2022-08-20
+
+</p>
     
-      <span class="post-reading-time">:: 7 min read (1443 words)</span>
     
-  </div>
-
-  
-    <span class="post-tags">
-      
-      #<a href="https://looped.network/tags/neovim/">Neovim</a>&nbsp;
-      
-      #<a href="https://looped.network/tags/coc/">Coc</a>&nbsp;
-      
-      #<a href="https://looped.network/tags/conquer-of-completion/">Conquer of Completion</a>&nbsp;
-      
-      #<a href="https://looped.network/tags/vim-plug/">vim-plug</a>&nbsp;
-      
-    </span>
-  
-  
-
-
-  
-
-  <div class="post-content"><div>
-        <p>I had written a few months ago on <a href="https://loopednetwork.medium.com/state-of-vim-2022-6ad0a6722a7a">Medium</a> that I was trying to switch from using <a href="https://code.visualstudio.com/">VS Code</a> as my main editor to <a href="https://www.vim.org/">Vim</a>. As I mentioned in that post, I&rsquo;ve used Vim for <em>years</em> now, but never as my &ldquo;main&rdquo; editor for when I need to get serious work done, such as with my job. I also swapped from vanilla Vim to <a href="https://neovim.io/">Neovim</a>, which I found to have a few quality of life improvements that I enjoyed. I just couldn&rsquo;t stick with it, though, because I missed the how frequently VS Code saved me from myself when I did things like making stupid mistakes that I&rsquo;ve need to debug manually because my editor wasn&rsquo;t telling me about the problems in advance. Likewise, I got irritated when I kept having to check things like what parameters I needed to pass to a method or where I defined a particular class manually because I couldn&rsquo;t easily peek them like I can in VS Code.</p>
+    
+    
+    <div><p>I had written a few months ago on <a href="https://loopednetwork.medium.com/state-of-vim-2022-6ad0a6722a7a">Medium</a> that I was trying to switch from using <a href="https://code.visualstudio.com/">VS Code</a> as my main editor to <a href="https://www.vim.org/">Vim</a>. As I mentioned in that post, I&rsquo;ve used Vim for <em>years</em> now, but never as my &ldquo;main&rdquo; editor for when I need to get serious work done, such as with my job. I also swapped from vanilla Vim to <a href="https://neovim.io/">Neovim</a>, which I found to have a few quality of life improvements that I enjoyed. I just couldn&rsquo;t stick with it, though, because I missed the how frequently VS Code saved me from myself when I did things like making stupid mistakes that I&rsquo;ve need to debug manually because my editor wasn&rsquo;t telling me about the problems in advance. Likewise, I got irritated when I kept having to check things like what parameters I needed to pass to a method or where I defined a particular class manually because I couldn&rsquo;t easily peek them like I can in VS Code.</p>
 <p>That being said, I knew this functionality was possible in Neovim (and Vim), but I just never bothered to check exactly how. During some initial homework on the matter, it seemed like parts of it were fairly simple while other parts were complicated. Ultimately, it turned out that how difficult the process is to set everything up really depends on how difficult you want to make it and how much you want to customize things. I just reproduced the steps I originally followed on my work laptop with my personal laptop to validate my notes prior to making this post, and it probably took me less than 5 minutes.</p>
-<h2 id="plugins-and-initvim">Plugins and <code>init.vim</code><a href="#plugins-and-initvim" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<h2 id="plugins-and-initvim">Plugins and <code>init.vim</code></h2>
 <p>When I first started with Neovim, I quite literally told it to just use what I had already set up with Vim as far as configuration and plugins were concerned. I had used <a href="https://github.com/tpope/vim-pathogen">Pathogen</a> for my Vim plugins and had my configuration done in <code>~/.vimrc</code>. Neovim looks for configuration files in <code>~/.config/nvim</code>, and they can be written in Vimscript, Lua, or a combination of the two. I initially just had my <code>init.vim</code> file with:</p>
 <pre tabindex="0"><code class="language-vimscript" data-lang="vimscript">set runtimepath^=~/.vim runtimepath+=~/.vim/after
 let &amp;packpath = &amp;runtimepath
@@ -183,13 +244,13 @@ call plug#end()
 <p>With <code>init.vim</code> updated, I just needed to close and re-open Neovim for everything to apply, followed by running:</p>
 <pre tabindex="0"><code>:PlugInstall
 </code></pre><p>This opens a new pane and shows the progress as the indicated plugins are all installed. What&rsquo;s really cool about this is that I can also use <code>:PlugUpdate</code> to update my plugins, rather than going to my plugin folder and using <code>git</code> commands to check for them.</p>
-<h3 id="note-on-configuration">Note On Configuration<a href="#note-on-configuration" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h3>
+<h3 id="note-on-configuration">Note On Configuration</h3>
 <p>I ultimately ended up doing all of my configuration in Vimscript. I would actually prefer to use Lua, but most of the examples I found were using Vimscript. I also have a fairly lengthy function in my original Vim configuration for adding numbers to my tabs that I didn&rsquo;t want to have to rewrite, especially since I wholesale copied it from somewhere online. Depending on what you want to do, however, you may end up with a mix of both, especially if you find some examples in Vimscript and some in Lua. This is entirely possible. Just note there can be only <strong>one</strong> <code>init</code> file, either <code>init.vim</code> or <code>init.lua</code>. If you create both, which is what I initially did, you&rsquo;ll get a warning each time you open Neovim and only one of them will be loaded.</p>
 <p>To use <code>init.vim</code> as a base and then also import some Lua configuration(s), I created a folder for Lua at:</p>
 <p><code>~/.config/nvim/lua</code></p>
 <p>In there, I created a file called <code>basic.lua</code> where I had some configuration. Then, back in <code>init.vim</code>, I just added the following line to tell it to check this file as well:</p>
 <pre tabindex="0"><code class="language-vimscript" data-lang="vimscript">lua require(&#39;basic&#39;)
-</code></pre><h2 id="error-checking">Error Checking<a href="#error-checking" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+</code></pre><h2 id="error-checking">Error Checking</h2>
 <p><strong>Note:</strong> I ended up not using the steps below, so if you want to follow along with exactly what I ended up using, there&rsquo;s no need to actually do any of the steps in this section.</p>
 <p>This is where some options come in to play. Astute readers may have noticed the second to last plugin in my vim-plug config was for:</p>
 <pre tabindex="0"><code>Plug &#39;neovim/nvim-lspconfig&#39;
@@ -198,13 +259,13 @@ call plug#end()
 </span></span></code></pre></div><p>And then I needed additional configuration to tell Neovim about this LSP. The samples were in Lua, which is why I initially needed to use Lua configuration alongside Vimscript:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span>require<span style="color:#e6db74">&#39;lspconfig&#39;</span>.pyright.setup{}
 </span></span></code></pre></div><p>This actually worked for me with respect to error checking. Opening up a Python file would give me warnings and errors on the fly. However, I didn&rsquo;t get any code completion. I started looking at options for this, but frankly a lot of them seemed pretty involved to set up, and I wanted something relatively simple rather than having to take significant amounts of time configuring my editor any time I use a new machine or want to try out a different language.</p>
-<h2 id="code-completion">Code Completion<a href="#code-completion" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<h2 id="code-completion">Code Completion</h2>
 <p>Ultimately, I stumbled onto onto <a href="https://github.com/neoclide/coc.nvim">Conquer of Completion</a>, or coc. I don&rsquo;t know why it took me so long to find as it seems to be <em>insanely</em> popular, but better later than never. One of coc&rsquo;s goals is to be as easy to use as doing the same thing in VS Code, and I honestly think they&rsquo;ve nailed it. I first installed it via vim-plug in <code>init.vim</code>:</p>
 <pre tabindex="0"><code>Plug &#39;neoclide/coc.nvim&#39;, {&#39;branch&#39;: &#39;release&#39;}
 </code></pre><p>After restarting Neovim and running <code>:PlugInstall</code>, I could now install language servers straight from Neovim by running <code>:CocInstall</code> commands:</p>
 <pre tabindex="0"><code>:CocInstall coc-json coc-css coc-html coc-htmldjango coc-pyright
 </code></pre><p>After this, I fired up a Python file and saw that I had both error checking <strong>and</strong> code completion. There was just one final step.</p>
-<h2 id="key-mapping">Key Mapping<a href="#key-mapping" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<h2 id="key-mapping">Key Mapping</h2>
 <p>Given the wide array of key mapping options and customizations that people do, coc doesn&rsquo;t want to make any assumptions about what key mappings are available and which may already be in use. As a result, there are NO custom mappings by default. Instead, they need to be added to your Neovim configuration just like any other mapping changes. However, the project shares a terrific example configuration with some recommended mappings in their <a href="https://github.com/neoclide/coc.nvim">documentation</a>. I legitimately just copied the sample into my existing <code>init.vim</code> file. This adds some extremely useful mappings like:</p>
 <ul>
 <li><code>gd</code> to take me to the declaration for what I&rsquo;m hovering.</li>
@@ -215,71 +276,51 @@ call plug#end()
 <li>A function to remap <code>Ctrl + f</code> and <code>Ctrl + b</code>, which are normally page down and page up, to scroll up and down in floating windows but only if one is present.</li>
 </ul>
 <p>And tons of other stuff great stuff. I initially spent about 30 minutes just playing around with some throwaway code to test all of the different options and key mappings. It honestly feels super natural and now gives me the same benefits of VS Code while allowing me to use a much leaner and more productive editor in Neovim.</p>
-
-      </div></div>
-
-  
-    
-<div class="pagination">
-    <div class="pagination__title">
-        <span class="pagination__title-h">Read other posts</span>
-        <hr />
-    </div>
-    <div class="pagination__buttons">
-        
-        <span class="button previous">
-            <a href="https://looped.network/posts/kinit-keytab-fail/">
-                <span class="button__icon">←</span>
-                <span class="button__text">kinit Fails Only When Using Keytab File</span>
-            </a>
-        </span>
-        
-        
-        <span class="button next">
-            <a href="https://looped.network/posts/gss-ntlmssp-alpine/">
-                <span class="button__text">Compiling GSS-NTLMSSP For Alpine Linux</span>
-                <span class="button__icon">→</span>
-            </a>
-        </span>
-        
-    </div>
 </div>
-
-  
-
-  
-    
-
-  
 </article>
 
-  </div>
+    <hr />
+    <p class="articleTagsContainer">
+        <span> </span>
+        <strong>Tags:</strong>
+        
+            <a
+                
+                href="/tags/coc">#Coc</a>
+        
+            <a
+                
+                href="/tags/conquer-of-completion">#Conquer of Completion</a>
+        
+            <a
+                
+                href="/tags/neovim">#Neovim</a>
+        
+            <a
+                
+                href="/tags/vim-plug">#vim-plug</a>
+        
+    </p>
 
-  
-    <footer class="footer">
-  <div class="footer__inner">
-    
-      <div class="copyright">
-        <span>© 2023 Powered by <a href="http://gohugo.io">Hugo</a></span>
-    
-      <span>:: <a href="https://github.com/panr/hugo-theme-terminal" target="_blank">Theme</a> made by <a href="https://github.com/panr" target="_blank">panr</a></span>
-      </div>
-  </div>
+
+
+
+
+
+                    </main><footer>
+    <hr />
+
+<p><small>
+        2023 &copy; Copyright 2023 - LoopedNetwork
+    </small></p>
+    <p><small>
+        <a href='https://gitlab.com/gabmus/hugo-ficurinia'>Ficurinia theme</a> for <a href='https://gohugo.io'>Hugo</a> by <a href='https://gabmus.org'>Gabriele Musco</a>. Licensed under <a href='https://www.gnu.org/licenses/agpl-3.0.html'>GNU AGPLv3</a>.
+    </small></p>
 </footer>
-
-
-
-
-
-
-<script type="text/javascript" src="/bundle.min.js"></script>
-
-
-
-
-
-  
 </div>
+            </div>
+        </div>
+
 
 </body>
 </html>

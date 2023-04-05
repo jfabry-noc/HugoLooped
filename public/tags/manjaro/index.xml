@@ -5,7 +5,8 @@
     <link>https://looped.network/tags/manjaro/</link>
     <description>Recent content in Manjaro on LoopedNetwork</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
+    <language>en</language>
+    <copyright>Copyright 2023 - LoopedNetwork</copyright>
     <lastBuildDate>Sat, 17 Sep 2022 18:30:30 -0400</lastBuildDate><atom:link href="https://looped.network/tags/manjaro/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Fixing Manjaro Linux Invalid Or Corrupt Package Error</title>
@@ -17,37 +18,6 @@
 sudo pacman -Syu Today, this resulted in an error message about the libibus package:
  warning: could not fully load metadata for package libibus-1.5.26-2 error: failed to prepare transaction (invalid or corrupted package)
  Fun. I first wanted to see if it was really just this package that was causing the problem or if there were other issues.</description>
-      <content>&lt;p&gt;As the title alludes to, this morning I tried updating my &lt;a href=&#34;https://www.pine64.org/pinebook-pro/&#34;&gt;Pinebook Pro&lt;/a&gt; running Manjaro Linux through my normal method:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo pacman -Syu
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Today, this resulted in an error message about the &lt;code&gt;libibus&lt;/code&gt; package:&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;warning: could not fully load metadata for package libibus-1.5.26-2
-error: failed to prepare transaction (invalid or corrupted package)&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;Fun. I first wanted to see if it was really &lt;em&gt;just&lt;/em&gt; this package that was causing the problem or if there were other issues. Being a &lt;code&gt;pacman&lt;/code&gt; noob, I just used the UI to mark updates to the &lt;code&gt;libibus&lt;/code&gt; package as ignored. Once I did that, all of the other packages installed successfully. This prompted for a reboot, which I gladly did since I figured I&amp;rsquo;d see if that made any difference. Once my laptop was back up and running, though, executing &lt;code&gt;pacman -Syu&lt;/code&gt; again still gave the same error related to &lt;code&gt;libibus&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;Some searches online showed that a mirror with a bad package could be the problem, so I updated my mirrors via:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo pacman-mirrors -f5
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;This didn&amp;rsquo;t solve the problem, but the new mirror gave me a different error message:&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;error: could not open file /var/lib/pacman/local/libibus-1.5.26-2/desc&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;With some more searches online, I saw a few people on the Manjaro forums say that simply creating those files was enough to fix similar errors they had with other packages. Creating the file above just resulted in an error about a second file being missing, so I ultimately ended up running:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo touch /var/lib/pacman/local/libibus-1.5.26-2/desc
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo touch /var/lib/pacman/local/libibus-1.5.26-2/file
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Now running an update allowed things to progress a little further, but I got a slew of errors complaining about &lt;code&gt;libibus&lt;/code&gt; header files (&lt;code&gt;.h&lt;/code&gt;) existing on the filesystem. My next less-than-well-thought-out idea was to just remove the package and try installing it fresh. I tried running:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo pacman -R libibus
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Fortunately, Manjaro didn&amp;rsquo;t let me do this by telling me that it was a dependency for &lt;code&gt;gnome-shell&lt;/code&gt;. Yeah, removing that would&amp;rsquo;ve been bad. It was back to searching online. The next tip I stumbled across was to try clearing the &lt;code&gt;pacman&lt;/code&gt; cache and then install updates with:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo pacman -Scc
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo pacman -Syyu
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;This unfortunately gave me the same error about the header files. However, the same &lt;a href=&#34;https://forum.manjaro.org/t/cant-update-manjaro-invalid-or-corrupted-package/78802&#34;&gt;forum thread&lt;/a&gt; had another recommendation to run:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo pacman -Syyu --overwrite &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;*&amp;#39;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Curious about exactly what this would do prior to running it, I checked out the &lt;code&gt;man&lt;/code&gt; page for &lt;code&gt;pacman&lt;/code&gt;:&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Bypass file conflict checks and overwrite conflicting files. If the package that is about to be installed contains files that are already installed and match glob, this option will cause all those files to be overwritten. Using &amp;ndash;overwrite will not allow overwriting a directory with a file or installing packages with conflicting files and directories. Multiple patterns can be specified by separating them with a comma. May be specified multiple times. Patterns can be negated, such that files matching them will not be overwritten, by prefixing them with an exclamation mark. Subsequent matches will override previous ones. A leading literal exclamation mark or backslash needs to be escaped.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;I took this to mean that instead of complaining about the header files that already existed on the filesystem, it would simply overwrite them since my glob was just &lt;code&gt;*&lt;/code&gt; to match &lt;em&gt;anything&lt;/em&gt;. I ran this, and sure enough everything was fine.&lt;/p&gt;
-&lt;p&gt;I mainly run Manjaro on my Pinebook Pro just because it&amp;rsquo;s such a first class citizen there with tons of support. It&amp;rsquo;s now the default when new Pinebook devices ship; back when I got mine it was still coming with Debian, though I quickly moved it over after seeing how in love the community was with Manjaro. I do find that I run into more random issues like this on Manjaro than I do with Fedora on my other laptop or Debian on my servers, for example, and at times it can be a little frustrating. I didn&amp;rsquo;t really want to spend a chunk of my Saturday morning troubleshooting this, for example. But while there seem to be more issues with Manjaro, the documentation and community are so good that usually after a little time digging in, the solution can always be found. I&amp;rsquo;ve yet to run into any issue where the &lt;a href=&#34;https://loopednetwork.medium.com/pop-os-upgrade-issues-e8bc95935ff8&#34;&gt;current installation was a lost cause&lt;/a&gt; forcing me to reinstall the operating system.&lt;/p&gt;
-</content>
     </item>
     
   </channel>

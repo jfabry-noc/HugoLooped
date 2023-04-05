@@ -5,7 +5,8 @@
     <link>https://looped.network/tags/scrollbars/</link>
     <description>Recent content in Scrollbars on LoopedNetwork</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
+    <language>en</language>
+    <copyright>Copyright 2023 - LoopedNetwork</copyright>
     <lastBuildDate>Sat, 25 Mar 2023 19:02:01 -0400</lastBuildDate><atom:link href="https://looped.network/tags/scrollbars/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>I Want Functional Scrollbars</title>
@@ -15,17 +16,6 @@
       <guid>https://looped.network/posts/functional-scrollbars/</guid>
       <description>Lately I&amp;rsquo;ve been lamenting the death of the functional scrollbar. Remember back in the day when scrollbars looked like this?
 The scrollbars were prominent because they were meant to be used. You were expected to grab one with your mouse and move it up and down. Today, scrollbars have a much different appearance and expectation of functionality. This is what they look like in Firefox on Gnome 43 running under Fedora 37:</description>
-      <content>&lt;p&gt;Lately I&amp;rsquo;ve been lamenting the death of the functional scrollbar. Remember back in the day when scrollbars looked like this?&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://looped.network/2023/macos9.png&#34; alt=&#34;Folders in macOS 9 &#34;&gt;&lt;/p&gt;
-&lt;p&gt;The scrollbars were prominent because they were meant to be &lt;em&gt;used&lt;/em&gt;. You were expected to grab one with your mouse and move it up and down. Today, scrollbars have a much different appearance and expectation of functionality. This is what they look like in Firefox on Gnome 43 running under Fedora 37:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://looped.network/2023/narrow_scrollbar_screenshot.png&#34; alt=&#34;Super narrow scrollbar&#34;&gt;&lt;/p&gt;
-&lt;p&gt;That&amp;rsquo;s just terrible. The idea here is that the scrollbar serves as more of a visual indicator of how much content is on the page rather than as something to be used directly. The problem is that I frequently find myself &lt;strong&gt;wanting&lt;/strong&gt; to use scrollbars, even in 2023. For example, as a trackball user it should be faster for me to grab a scrollbar and drag it to the top of a large body of text than it is for me to make a dozen revolutions of the scroll wheel. Trying to actually click on a bar that narrow is a challenge, though. The scrollbar will become a little wider when my mouse is over it, but 1.) not by much and 2.) it defeats the purpose if my mouse has to be over the super narrow bar in order to make it&amp;hellip; the slightest bit less narrow.&lt;/p&gt;
-&lt;p&gt;Here are two terrible images I captured with my phone showcasing the problem since getting the scrollbars to even appear and then capturing a screenshot that also contains my cursor is basically impossible. I think this also does a nice job of illustrating just how narrow the default scrollbars are relative to my mouse cursor:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://looped.network/2023/phone_scrollbar1.jpeg&#34; alt=&#34;Mouse cursor next to an extremely narrow scrollbar&#34;&gt;&lt;/p&gt;
-&lt;p&gt;Once my cursor is already over it, then it looks like this&amp;hellip; which is still not good, even if it was helpful&amp;hellip; which it isn&amp;rsquo;t:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://looped.network/2023/phone_scrollbar2.jpeg&#34; alt=&#34;Scrollbar with a cursor already over it&#34;&gt;&lt;/p&gt;
-&lt;p&gt;Firefox is the most egregious offender that I regularly use. For example, Gnome Terminal offers a slightly wider scrollbar that is actually possible to use. Scrollbars in GIMP are virtually akin to the macOS 9 ones and are quite nice. I honestly don&amp;rsquo;t even think about the ones in Firefox if I&amp;rsquo;m using my laptop in an undocked fashion since kinetic scrolling on the trackpad makes it trivial to quickly move between the top and bottom of a long page. When using a mouse that doesn&amp;rsquo;t also offer kinetic scrolling in the scroll wheel, though, slightly more usable scrollbars would go a long way. They don&amp;rsquo;t just have to be a visual indicator.&lt;/p&gt;
-</content>
     </item>
     
   </channel>

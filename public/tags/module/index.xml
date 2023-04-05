@@ -5,7 +5,8 @@
     <link>https://looped.network/tags/module/</link>
     <description>Recent content in Module on LoopedNetwork</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
+    <language>en</language>
+    <copyright>Copyright 2023 - LoopedNetwork</copyright>
     <lastBuildDate>Sun, 31 Jul 2022 18:20:36 -0400</lastBuildDate><atom:link href="https://looped.network/tags/module/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Importing Functions, Classes, and Methods From Other PowerShell Files</title>
@@ -14,53 +15,6 @@
       
       <guid>https://looped.network/posts/powershell-import-classes-functions/</guid>
       <description>I&amp;rsquo;ve recently been working on a project that requires me to use PowerShell. I actually feel relatively fluent in PowerShell since it was my main scripting language for a little over a decade while I worked as a sysadmin in highly Windows-centric environments that involved me automating as much of my job as possible in order to be able to do things like sleep on occasion. However, my PowerShell work rarely (read: never) went beyond single file scripts.</description>
-      <content>&lt;p&gt;I&amp;rsquo;ve recently been working on a project that requires me to use PowerShell. I actually feel relatively fluent in PowerShell since it was my main scripting language for a little over a decade while I worked as a sysadmin in highly Windows-centric environments that involved me automating as much of my job as possible in order to be able to do things like sleep on occasion. However, my PowerShell work rarely (read: never) went beyond single file scripts.&lt;/p&gt;
-&lt;p&gt;With this project being a decent bit more complicated and with the potential for some of the code to be useful in future projects, I wanted to figure out how to actually break things up into useful chunks, just like I would do when writing something in Python. Fortunately, it wasn&amp;rsquo;t terribly difficult to figure out, though, as is typically the case with PowerShell, the documentation was a bit wanting. I had to put information together from a few different resource and go through a little trial-and-error to actually figure it out since Microsoft can never just seem to give clear, concise examples of anything PowerShell-related.&lt;/p&gt;
-&lt;p&gt;The first thing I needed to realize is that I wanted to create my files not with a normal &lt;code&gt;.ps1&lt;/code&gt; extension but with a &lt;code&gt;.psm1&lt;/code&gt; extension to indicate that they were PowerShell modules. Only the file that would normally be executed directly has a &lt;code&gt;.ps1&lt;/code&gt; extension. I kind of hate this since it makes things more difficult to test individually; in Python, for example, I could just create a main function that executes when:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; __name__ &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;__main__&amp;#34;&lt;/span&gt;:
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Then I can add things in &lt;code&gt;main&lt;/code&gt; while building it out that are later ignored when the code is called from elsewhere. PowerShell doesn&amp;rsquo;t offer anything like this, though it&amp;rsquo;s not a huge ordeal. After creating a &lt;code&gt;.psm1&lt;/code&gt; file, it can contain functions, classes, and/or methods. For example, here&amp;rsquo;s a sample file called &lt;code&gt;helloFunc.psm1&lt;/code&gt; with just a function:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-powershell&#34; data-lang=&#34;powershell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;function&lt;/span&gt; Write-Hello {
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;param&lt;/span&gt;(
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        [&lt;span style=&#34;color:#66d9ef&#34;&gt;Parameter&lt;/span&gt;(&lt;span style=&#34;color:#66d9ef&#34;&gt;Mandatory&lt;/span&gt;=$true)]&lt;span style=&#34;color:#66d9ef&#34;&gt;[string]&lt;/span&gt;$Name
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    )
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    Write-Output &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Hello, $Name.&amp;#34;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;And here&amp;rsquo;s a file called &lt;code&gt;personClass.psm1&lt;/code&gt; with both a class and a couple of methods:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-powershell&#34; data-lang=&#34;powershell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;class Person {
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;[String]&lt;/span&gt;$Name
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;[int]&lt;/span&gt;$Age
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#75715e&#34;&gt;# Constructor.&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    Person(&lt;span style=&#34;color:#66d9ef&#34;&gt;[String]&lt;/span&gt;$Name, &lt;span style=&#34;color:#66d9ef&#34;&gt;[int]&lt;/span&gt;$Age) {
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        $this.Name = $Name
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        $this.Age = $Age
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;[String]&lt;/span&gt;GreetPerson(&lt;span style=&#34;color:#66d9ef&#34;&gt;[String]&lt;/span&gt;$PreferredGreeting) {
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt;($PreferredGreeting &lt;span style=&#34;color:#f92672&#34;&gt;-eq&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;-or&lt;/span&gt; $null &lt;span style=&#34;color:#f92672&#34;&gt;-eq&lt;/span&gt; $PreferredGreeting) {
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            $PreferredGreeting = &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Hello&amp;#34;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        }
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;$PreferredGreeting, &lt;/span&gt;$($this.Name)&lt;span style=&#34;color:#e6db74&#34;&gt;. I can&amp;#39;t believe you&amp;#39;re &lt;/span&gt;$($this.Age)&lt;span style=&#34;color:#e6db74&#34;&gt; years old.&amp;#34;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;[void]&lt;/span&gt;HaveBirthday() {
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        $this.Age++
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Neither file has an entrypoint, though that&amp;rsquo;s expected since they&amp;rsquo;re designed to be called from somewhere else. Here&amp;rsquo;s the &lt;code&gt;main.ps1&lt;/code&gt; file which ties them all together:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-powershell&#34; data-lang=&#34;powershell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#!/usr/bin/env pwsh&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;using module ./personClass.psm1
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;using module ./helloFunc.psm1
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Write-Hello -Name &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Garrett&amp;#34;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$me = &lt;span style=&#34;color:#66d9ef&#34;&gt;[Person]&lt;/span&gt;::new(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Garrett&amp;#34;&lt;/span&gt;, 9000)
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Write-Output $me.GreetPerson(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Salutations&amp;#34;&lt;/span&gt;)
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$me.HaveBirthday()
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Write-Output $me.GreetPerson(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Salutations&amp;#34;&lt;/span&gt;)
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The most important thing here are the two &lt;code&gt;using&lt;/code&gt; statements, which specify that I&amp;rsquo;m going to import the two aforementioned files. Once I do this, I can then call classes, methods, and functions in those files directly.&lt;/p&gt;
-</content>
     </item>
     
   </channel>

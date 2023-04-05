@@ -5,7 +5,8 @@
     <link>https://looped.network/tags/mp4/</link>
     <description>Recent content in MP4 on LoopedNetwork</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
+    <language>en</language>
+    <copyright>Copyright 2023 - LoopedNetwork</copyright>
     <lastBuildDate>Wed, 14 Sep 2022 18:28:19 -0400</lastBuildDate><atom:link href="https://looped.network/tags/mp4/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Extracting Audio From Video With FFmpeg</title>
@@ -15,21 +16,6 @@
       <guid>https://looped.network/posts/ffmpeg-audio-from-video/</guid>
       <description>Just a few moments ago I needed to extract the audio component out of a video file into some type of standalone audio file, like .mp3. Since I&amp;rsquo;ve been working with Audacity to record audio, I figured maybe it had some capability for ripping it out of video.
 My initial searches gave me results like this which quickly made it clear that while this is technically possible, it requires some add-ins that I didn&amp;rsquo;t really want to mess around with.</description>
-      <content>&lt;p&gt;Just a few moments ago I needed to extract the audio component out of a video file into some type of standalone audio file, like &lt;code&gt;.mp3&lt;/code&gt;. Since I&amp;rsquo;ve been working with &lt;a href=&#34;https://www.audacityteam.org/&#34;&gt;Audacity&lt;/a&gt; to &lt;em&gt;record&lt;/em&gt; audio, I figured maybe it had some capability for ripping it out of video.&lt;/p&gt;
-&lt;p&gt;My initial searches gave me results like &lt;a href=&#34;https://www.youtube.com/watch?v=SP8IONsqMVk&#34;&gt;this&lt;/a&gt; which quickly made it clear that while this is technically possible, it requires some add-ins that I didn&amp;rsquo;t really want to mess around with. However, since the add-in mentioned in that video was for &lt;a href=&#34;https://ffmpeg.org/&#34;&gt;FFmpeg&lt;/a&gt;, I realized I could just use that directly.&lt;/p&gt;
-&lt;p&gt;I didn&amp;rsquo;t have &lt;code&gt;ffmpeg&lt;/code&gt; installed, but that was easy enough to rectify on Fedora 36.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo dnf install ffmpeg-free
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Then I needed to extract the audio. I first checked how it was encoded in the video with:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;ffprobe my_video.mp4
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;After sifting through the output, I saw that it was encoded as &lt;strong&gt;aac&lt;/strong&gt;:&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Stream #0:1&lt;a href=&#34;eng&#34;&gt;0x2&lt;/a&gt;: Audio: aac (mp4a / 0x6134706D), 48000 Hz, stereo, s16, 317 kb/s (default)&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;Rather than that, I wanted to simultaneously re-encode the audio as MP3. Another quick search showed me some &lt;a href=&#34;https://stackoverflow.com/questions/9913032/how-can-i-extract-audio-from-video-with-ffmpeg&#34;&gt;great resources&lt;/a&gt;. Ultimately, I ended up doing:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;ffmpeg -i my_video.mp4 -q:a &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt; -map a bourbon.mp3
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;As mentioned in the &lt;a href=&#34;https://stackoverflow.com/a/36324719&#34;&gt;Stack Overflow post&lt;/a&gt;, the &lt;code&gt;-q:a 0&lt;/code&gt; parameter allows for a variable bitrate while while &lt;code&gt;-map a&lt;/code&gt; says to ignore everything else except the audio.&lt;/p&gt;
-&lt;p&gt;Just a few moments later, and my MP3 was successfully encoded.&lt;/p&gt;
-</content>
     </item>
     
   </channel>
