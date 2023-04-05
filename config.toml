@@ -114,7 +114,7 @@ summaryLength = 70  # number of words for article summaries
     [[menu.icons]]
         identifier = "mastodon"
         name = "Mastodon"
-        url = "https://mastodon.online/@looped_network"
+        url = "https://social.sdf.org/@loopednetwork"
         weight = 20
 
 # this section is necessary if you want infinite scrolling

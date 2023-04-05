@@ -21,7 +21,7 @@ When it came to picking a theme, I stuck with some of the key things I discussed
 My only real issue with it is that I the link to my [Mastodon](https://mastodon.online/@looped_network) account doesn't include the `rel="me"` part that's required for my site to show up as being verified:
 
 ```html
-<a rel="me" href="https://mastodon.online/@looped_network">Mastodon</a>
+<a rel="me" href="https://social.sdf.org/@loopednetwork">Mastodon</a>
 ```
 
 I may see if I can figure out how to add that to the theme and, if so, open a PR for it.
