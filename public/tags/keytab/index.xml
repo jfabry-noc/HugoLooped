@@ -5,8 +5,7 @@
     <link>https://looped.network/tags/keytab/</link>
     <description>Recent content in keytab on LoopedNetwork</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <copyright>Copyright 2023 - LoopedNetwork</copyright>
+    <language>en-us</language>
     <lastBuildDate>Wed, 07 Sep 2022 18:26:27 -0400</lastBuildDate><atom:link href="https://looped.network/tags/keytab/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>kinit Fails Only When Using Keytab File</title>
@@ -15,6 +14,38 @@
       
       <guid>https://looped.network/posts/kinit-keytab-fail/</guid>
       <description>Lately I&amp;rsquo;ve been working through getting WinRM connectivity working between a Linux container and a bunch of Windows servers. I&amp;rsquo;m using the venerable pywinrm library. It works great, but there was a decent bit of setup for the underlying host to make it work that I had been unfamiliar with; you can&amp;rsquo;t just create a client object, plug in some credentials, and go. A big part of this for my setup was configuring krb5 to be able to speak to Active Directory appropriately.</description>
+      <content>&lt;p&gt;Lately I&amp;rsquo;ve been working through getting WinRM connectivity working between a Linux container and a bunch of Windows servers. I&amp;rsquo;m using the venerable &lt;a href=&#34;https://pypi.org/project/pywinrm/&#34;&gt;pywinrm library&lt;/a&gt;. It works &lt;em&gt;great&lt;/em&gt;, but there was a decent bit of setup for the underlying host to make it work that I had been unfamiliar with; you can&amp;rsquo;t just create a client object, plug in some credentials, and go. A big part of this for my setup was configuring &lt;a href=&#34;https://pkgs.alpinelinux.org/package/edge/main/aarch64/krb5&#34;&gt;krb5&lt;/a&gt; to be able to speak to Active Directory appropriately.&lt;/p&gt;
+&lt;p&gt;My setup involves a container that runs an SSH server which another, external service actually SSHs into in order to execute various pieces of code. So my idea was to take the entrypoint script that configures the SSH server and have it also both:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Create a keytab file.&lt;/li&gt;
+&lt;li&gt;Use it to get a TGT.&lt;/li&gt;
+&lt;li&gt;Create a &lt;code&gt;cron&lt;/code&gt; job to keep it refreshed.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Let&amp;rsquo;s pretend the AD account I had been given to use was:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;mailto:Username@sub.domain.com&#34;&gt;Username@sub.domain.com&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;In my manual testing, this worked fine after I was prompted for the password:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;kinit Username@SUB.DOMAIN.COM
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;If you&amp;rsquo;re completely new to this, note that it&amp;rsquo;s actually critical that the domain (more appropriately called the &amp;ldquo;realm&amp;rdquo; in this case) is in all capital letters. If I run this manually by &lt;code&gt;exec&lt;/code&gt;ing my way into a container, I get a TGT just like I&amp;rsquo;d expect. I can view it via:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;klist -e
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Unfortunately, things didn&amp;rsquo;t go smoothly when I tried to use a keytab file. I created one in my entrypoint shell script via a function that runs:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    echo &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;addent -password -p Username@SUB.DOMAIN.COM -k 1 -e aes256-cts-hmac-sha1-96&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    sleep &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    echo &amp;lt;password&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    sleep &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    echo &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;wkt /file.keytab&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;}&lt;/span&gt; | ktutil &amp;amp;&amp;gt; /dev/null
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The keytab file is created successfully, but as soon as I try to leverage it with&amp;hellip;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;kinit Username@SUB.DOMAIN.COM -kt /file.keytab
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&amp;hellip;I receive a Kerberos preauthentication error. After much confusion and searching around online, I finally found an &lt;a href=&#34;https://community.cloudera.com/t5/Community-Articles/quot-kinit-Preauthentication-failed-while-getting-initial/ta-p/346998&#34;&gt;article&lt;/a&gt; that got me on the right track.&lt;/p&gt;
+&lt;p&gt;The article discusses the fact that an assumption is being made under the hood that the salt being used to encrypt the contents of the keytab file is the realm concatenated together with the user&amp;rsquo;s samAccountName (aka &amp;ldquo;shortname&amp;rdquo;). So for my sample account, the salt value would be:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;SUB.DOMAIN.COMUsername&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;The problem highlighted by the article is that when you authenticate via the UserPrincipalName format (e.g.: &lt;a href=&#34;mailto:username@domain.com&#34;&gt;username@domain.com&lt;/a&gt;) rather than the shortname format (e.g.: domain\username), another assumption is made that the prefix of the UPN is the same as the shortname. This is very commonly not the case; in a previous life where I actually was the AD sysadmin, I had shortnames of first initial and last name while the UPNs were actually firstname dot lastname. So for example, my UPN was:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;mailto:looped.network@domain.com&#34;&gt;looped.network@domain.com&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;While my samAccountName was:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;lnetwork&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;If this type of mismatch happens, you can use &lt;code&gt;-s&lt;/code&gt; when running &lt;code&gt;addent&lt;/code&gt; to specify the salt. After checking AD, I verified in my current case that the username was the same for both properties&amp;hellip; but that in both places it was completely &lt;em&gt;lowercase&lt;/em&gt;. I can&amp;rsquo;t say why it was given to me with the first character capitalized, but after re-trying with &lt;strong&gt;&lt;a href=&#34;mailto:username@SUB.DOMAIN.COM&#34;&gt;username@SUB.DOMAIN.COM&lt;/a&gt;&lt;/strong&gt;, everything was successful. This made sense to me because while AD doesn&amp;rsquo;t care about the username&amp;rsquo;s capitalization when it authenticates (hence why manually running &lt;code&gt;kinit&lt;/code&gt; and typing the password worked), using a keytab file means that the wrong salt was given.&lt;/p&gt;
+</content>
     </item>
     
   </channel>

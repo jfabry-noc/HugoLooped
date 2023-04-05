@@ -5,8 +5,7 @@
     <link>https://looped.network/tags/conquer-of-completion/</link>
     <description>Recent content in Conquer of Completion on LoopedNetwork</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <copyright>Copyright 2023 - LoopedNetwork</copyright>
+    <language>en-us</language>
     <lastBuildDate>Sat, 20 Aug 2022 18:25:16 -0400</lastBuildDate><atom:link href="https://looped.network/tags/conquer-of-completion/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Real Time Error Checking and Code Completion With Neovim</title>
@@ -15,6 +14,65 @@
       
       <guid>https://looped.network/posts/neovim-lsp/</guid>
       <description>I had written a few months ago on Medium that I was trying to switch from using VS Code as my main editor to Vim. As I mentioned in that post, I&amp;rsquo;ve used Vim for years now, but never as my &amp;ldquo;main&amp;rdquo; editor for when I need to get serious work done, such as with my job. I also swapped from vanilla Vim to Neovim, which I found to have a few quality of life improvements that I enjoyed.</description>
+      <content>&lt;p&gt;I had written a few months ago on &lt;a href=&#34;https://loopednetwork.medium.com/state-of-vim-2022-6ad0a6722a7a&#34;&gt;Medium&lt;/a&gt; that I was trying to switch from using &lt;a href=&#34;https://code.visualstudio.com/&#34;&gt;VS Code&lt;/a&gt; as my main editor to &lt;a href=&#34;https://www.vim.org/&#34;&gt;Vim&lt;/a&gt;. As I mentioned in that post, I&amp;rsquo;ve used Vim for &lt;em&gt;years&lt;/em&gt; now, but never as my &amp;ldquo;main&amp;rdquo; editor for when I need to get serious work done, such as with my job. I also swapped from vanilla Vim to &lt;a href=&#34;https://neovim.io/&#34;&gt;Neovim&lt;/a&gt;, which I found to have a few quality of life improvements that I enjoyed. I just couldn&amp;rsquo;t stick with it, though, because I missed the how frequently VS Code saved me from myself when I did things like making stupid mistakes that I&amp;rsquo;ve need to debug manually because my editor wasn&amp;rsquo;t telling me about the problems in advance. Likewise, I got irritated when I kept having to check things like what parameters I needed to pass to a method or where I defined a particular class manually because I couldn&amp;rsquo;t easily peek them like I can in VS Code.&lt;/p&gt;
+&lt;p&gt;That being said, I knew this functionality was possible in Neovim (and Vim), but I just never bothered to check exactly how. During some initial homework on the matter, it seemed like parts of it were fairly simple while other parts were complicated. Ultimately, it turned out that how difficult the process is to set everything up really depends on how difficult you want to make it and how much you want to customize things. I just reproduced the steps I originally followed on my work laptop with my personal laptop to validate my notes prior to making this post, and it probably took me less than 5 minutes.&lt;/p&gt;
+&lt;h2 id=&#34;plugins-and-initvim&#34;&gt;Plugins and &lt;code&gt;init.vim&lt;/code&gt;&lt;/h2&gt;
+&lt;p&gt;When I first started with Neovim, I quite literally told it to just use what I had already set up with Vim as far as configuration and plugins were concerned. I had used &lt;a href=&#34;https://github.com/tpope/vim-pathogen&#34;&gt;Pathogen&lt;/a&gt; for my Vim plugins and had my configuration done in &lt;code&gt;~/.vimrc&lt;/code&gt;. Neovim looks for configuration files in &lt;code&gt;~/.config/nvim&lt;/code&gt;, and they can be written in Vimscript, Lua, or a combination of the two. I initially just had my &lt;code&gt;init.vim&lt;/code&gt; file with:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-vimscript&#34; data-lang=&#34;vimscript&#34;&gt;set runtimepath^=~/.vim runtimepath+=~/.vim/after
+let &amp;amp;packpath = &amp;amp;runtimepath
+source ~/.vimrc
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;This was taken straight from the &lt;a href=&#34;https://neovim.io/doc/user/nvim.html#nvim-from-vim&#34;&gt;documentation&lt;/a&gt;. It worked fine, but I wanted to keep my configs separate in this case. I started my just copying the content of my existing &lt;code&gt;.vimrc&lt;/code&gt; file to &lt;code&gt;~/.config/nvim/init.vim&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; If you&amp;rsquo;re curious, my full Neovim configuration is on &lt;a href=&#34;https://gitlab.com/-/snippets/2391236&#34;&gt;GitLab&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Next I wanted a plugin manager. &lt;a href=&#34;https://github.com/junegunn/vim-plug&#34;&gt;vim-plug&lt;/a&gt; seems to be extremely popular and was simple enough to install with the command they provide:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sh -c &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;curl -fLo &amp;#34;${XDG_DATA_HOME:-$HOME/.local/share}&amp;#34;/nvim/site/autoload/plug.vim --create-dirs \
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Then I just updated my &lt;code&gt;init.vim&lt;/code&gt; with the plugins I wanted to install:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-vimscript&#34; data-lang=&#34;vimscript&#34;&gt;call plug#begin(&amp;#39;~/.config/plugged&amp;#39;)
+Plug &amp;#39;https://github.com/joshdick/onedark.vim.git&amp;#39;
+Plug &amp;#39;https://github.com/vim-airline/vim-airline.git&amp;#39;
+Plug &amp;#39;https://github.com/tpope/vim-fugitive.git&amp;#39;
+Plug &amp;#39;https://github.com/PProvost/vim-ps1.git&amp;#39;
+Plug &amp;#39;https://github.com/wakatime/vim-wakatime.git&amp;#39;
+Plug &amp;#39;neovim/nvim-lspconfig&amp;#39;
+Plug &amp;#39;neoclide/coc.nvim&amp;#39;, {&amp;#39;branch&amp;#39;: &amp;#39;release&amp;#39;}
+call plug#end()
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;code&gt;call plug#begin(&#39;~/.config/plugged&#39;)&lt;/code&gt; and &lt;code&gt;call plug#end()&lt;/code&gt; indicate what configuration pertains to vim-plug. The path inside of &lt;code&gt;call plug#begin&lt;/code&gt; is where plugins get installed to; I could pick whatever arbitrary location I wanted. Plugins can be installed with any valid git link. You can see above that there&amp;rsquo;s a mix of full URLs and a shorthand method. I started off by just copying the links for plugins I already used with Vim (all of the full GitHub links) and then adding the others as I looked up how to do some additional configuration. More on those later.&lt;/p&gt;
+&lt;p&gt;With &lt;code&gt;init.vim&lt;/code&gt; updated, I just needed to close and re-open Neovim for everything to apply, followed by running:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;:PlugInstall
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;This opens a new pane and shows the progress as the indicated plugins are all installed. What&amp;rsquo;s really cool about this is that I can also use &lt;code&gt;:PlugUpdate&lt;/code&gt; to update my plugins, rather than going to my plugin folder and using &lt;code&gt;git&lt;/code&gt; commands to check for them.&lt;/p&gt;
+&lt;h3 id=&#34;note-on-configuration&#34;&gt;Note On Configuration&lt;/h3&gt;
+&lt;p&gt;I ultimately ended up doing all of my configuration in Vimscript. I would actually prefer to use Lua, but most of the examples I found were using Vimscript. I also have a fairly lengthy function in my original Vim configuration for adding numbers to my tabs that I didn&amp;rsquo;t want to have to rewrite, especially since I wholesale copied it from somewhere online. Depending on what you want to do, however, you may end up with a mix of both, especially if you find some examples in Vimscript and some in Lua. This is entirely possible. Just note there can be only &lt;strong&gt;one&lt;/strong&gt; &lt;code&gt;init&lt;/code&gt; file, either &lt;code&gt;init.vim&lt;/code&gt; or &lt;code&gt;init.lua&lt;/code&gt;. If you create both, which is what I initially did, you&amp;rsquo;ll get a warning each time you open Neovim and only one of them will be loaded.&lt;/p&gt;
+&lt;p&gt;To use &lt;code&gt;init.vim&lt;/code&gt; as a base and then also import some Lua configuration(s), I created a folder for Lua at:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;~/.config/nvim/lua&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;In there, I created a file called &lt;code&gt;basic.lua&lt;/code&gt; where I had some configuration. Then, back in &lt;code&gt;init.vim&lt;/code&gt;, I just added the following line to tell it to check this file as well:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-vimscript&#34; data-lang=&#34;vimscript&#34;&gt;lua require(&amp;#39;basic&amp;#39;)
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;error-checking&#34;&gt;Error Checking&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; I ended up not using the steps below, so if you want to follow along with exactly what I ended up using, there&amp;rsquo;s no need to actually do any of the steps in this section.&lt;/p&gt;
+&lt;p&gt;This is where some options come in to play. Astute readers may have noticed the second to last plugin in my vim-plug config was for:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;Plug &amp;#39;neovim/nvim-lspconfig&amp;#39;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;This is for the LSP, or Language Server Protocol. This allows Neovim to talk to various language servers and implement whatever functionality they offer. However, it doesn&amp;rsquo;t actually come with any language servers included, so I needed to get those and configure them as needed. For example, I could install &lt;a href=&#34;https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#pyright&#34;&gt;pyright&lt;/a&gt; from some other source, like NPM:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;npm i -g pyright
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;And then I needed additional configuration to tell Neovim about this LSP. The samples were in Lua, which is why I initially needed to use Lua configuration alongside Vimscript:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-lua&#34; data-lang=&#34;lua&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;require&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;lspconfig&amp;#39;&lt;/span&gt;.pyright.setup{}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;This actually worked for me with respect to error checking. Opening up a Python file would give me warnings and errors on the fly. However, I didn&amp;rsquo;t get any code completion. I started looking at options for this, but frankly a lot of them seemed pretty involved to set up, and I wanted something relatively simple rather than having to take significant amounts of time configuring my editor any time I use a new machine or want to try out a different language.&lt;/p&gt;
+&lt;h2 id=&#34;code-completion&#34;&gt;Code Completion&lt;/h2&gt;
+&lt;p&gt;Ultimately, I stumbled onto onto &lt;a href=&#34;https://github.com/neoclide/coc.nvim&#34;&gt;Conquer of Completion&lt;/a&gt;, or coc. I don&amp;rsquo;t know why it took me so long to find as it seems to be &lt;em&gt;insanely&lt;/em&gt; popular, but better later than never. One of coc&amp;rsquo;s goals is to be as easy to use as doing the same thing in VS Code, and I honestly think they&amp;rsquo;ve nailed it. I first installed it via vim-plug in &lt;code&gt;init.vim&lt;/code&gt;:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;Plug &amp;#39;neoclide/coc.nvim&amp;#39;, {&amp;#39;branch&amp;#39;: &amp;#39;release&amp;#39;}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;After restarting Neovim and running &lt;code&gt;:PlugInstall&lt;/code&gt;, I could now install language servers straight from Neovim by running &lt;code&gt;:CocInstall&lt;/code&gt; commands:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;:CocInstall coc-json coc-css coc-html coc-htmldjango coc-pyright
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;After this, I fired up a Python file and saw that I had both error checking &lt;strong&gt;and&lt;/strong&gt; code completion. There was just one final step.&lt;/p&gt;
+&lt;h2 id=&#34;key-mapping&#34;&gt;Key Mapping&lt;/h2&gt;
+&lt;p&gt;Given the wide array of key mapping options and customizations that people do, coc doesn&amp;rsquo;t want to make any assumptions about what key mappings are available and which may already be in use. As a result, there are NO custom mappings by default. Instead, they need to be added to your Neovim configuration just like any other mapping changes. However, the project shares a terrific example configuration with some recommended mappings in their &lt;a href=&#34;https://github.com/neoclide/coc.nvim&#34;&gt;documentation&lt;/a&gt;. I legitimately just copied the sample into my existing &lt;code&gt;init.vim&lt;/code&gt; file. This adds some extremely useful mappings like:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;gd&lt;/code&gt; to take me to the declaration for what I&amp;rsquo;m hovering.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;K&lt;/code&gt; to show the documentation for what I&amp;rsquo;m hovering (based on the docstring for Python, for example.)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;]g&lt;/code&gt; to go to the next error/warning and &lt;code&gt;[g&lt;/code&gt; to go to the previous one.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Tab&lt;/code&gt; and &lt;code&gt;Shift + Tab&lt;/code&gt; to move through the options in the code completion floating window.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Enter&lt;/code&gt; to select the first item in the code completion floating window.&lt;/li&gt;
+&lt;li&gt;A function to remap &lt;code&gt;Ctrl + f&lt;/code&gt; and &lt;code&gt;Ctrl + b&lt;/code&gt;, which are normally page down and page up, to scroll up and down in floating windows but only if one is present.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;And tons of other stuff great stuff. I initially spent about 30 minutes just playing around with some throwaway code to test all of the different options and key mappings. It honestly feels super natural and now gives me the same benefits of VS Code while allowing me to use a much leaner and more productive editor in Neovim.&lt;/p&gt;
+</content>
     </item>
     
   </channel>

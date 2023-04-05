@@ -5,7 +5,6 @@
     <link>https://looped.network/categories/</link>
     <description>Recent content in Categories on LoopedNetwork</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <copyright>Copyright 2023 - LoopedNetwork</copyright><atom:link href="https://looped.network/categories/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language><atom:link href="https://looped.network/categories/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

@@ -5,8 +5,7 @@
     <link>https://looped.network/tags/alpine/</link>
     <description>Recent content in Alpine on LoopedNetwork</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <copyright>Copyright 2023 - LoopedNetwork</copyright>
+    <language>en-us</language>
     <lastBuildDate>Sun, 14 Aug 2022 18:23:54 -0400</lastBuildDate><atom:link href="https://looped.network/tags/alpine/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Compiling GSS-NTLMSSP For Alpine Linux</title>
@@ -15,6 +14,38 @@
       
       <guid>https://looped.network/posts/gss-ntlmssp-alpine/</guid>
       <description>I recently found myself working on a project which required the GSS-NTLMSSP library. The application is going to be delivered via Kubernetes, so I needed to build a Docker image with this library. The project&amp;rsquo;s build instructions are pretty clear about what the dependencies are, but given that this was going to be a Docker image, I wanted to use Alpine Linux as the base image in order to keep the image size as small as possible.</description>
+      <content>&lt;p&gt;I recently found myself working on a project which required the &lt;a href=&#34;https://github.com/gssapi/gss-ntlmssp&#34;&gt;GSS-NTLMSSP&lt;/a&gt; library. The application is going to be delivered via Kubernetes, so I needed to build a Docker image with this library. The &lt;a href=&#34;https://github.com/gssapi/gss-ntlmssp/blob/main/BUILD.txt&#34;&gt;project&amp;rsquo;s build instructions&lt;/a&gt; are pretty clear about what the dependencies are, but given that this was going to be a Docker image, I wanted to use &lt;a href=&#34;https://www.alpinelinux.org/&#34;&gt;Alpine Linux&lt;/a&gt; as the base image in order to keep the image size as small as possible. The problem with this is that Alpine is just different enough to require different dependencies, publish their &lt;a href=&#34;https://pkgs.alpinelinux.org/packages&#34;&gt;packages&lt;/a&gt; under different names, etc.&lt;/p&gt;
+&lt;p&gt;I started off by just doing things manually where I fired up a local Docker container running the base &lt;a href=&#34;https://hub.docker.com/_/alpine&#34;&gt;Docker image&lt;/a&gt; and then manually installing each package via &lt;code&gt;apk add {package_name}&lt;/code&gt; to make troubleshooting easier. Once I had all of the packages from the aforementioned build documentation, I ran &lt;code&gt;./configure&lt;/code&gt;, looked at the errors, figured out which package was missing, installed it, and tried again. After several iterations of this process, &lt;code&gt;./configure&lt;/code&gt; executed successfully and it was time to attempt running &lt;code&gt;make&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;make&lt;/code&gt; ran for a minute but then would error out with:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;undefined reference to &amp;rsquo;libintl_dgettext&#39;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;This seemed odd to me because while running &lt;code&gt;./configure&lt;/code&gt; I had received an error that &lt;code&gt;msgfmt&lt;/code&gt; couldn&amp;rsquo;t be found, and I had installed &lt;code&gt;gettext-dev&lt;/code&gt; in order to accommodate that. After some additional packages searches, I discovered the &lt;code&gt;musl-libintl&lt;/code&gt; library is also available. I attempted to install &lt;em&gt;that&lt;/em&gt; but received an error that it was attempting to modify a file controlled by the &lt;code&gt;gettext-dev&lt;/code&gt; package. I uninstalled that via &lt;code&gt;apk del gettext-dev&lt;/code&gt; and then ran into another error that&amp;ndash;duh&amp;ndash;&lt;code&gt;msgfmt&lt;/code&gt; was now missing again. I handled that by just installing the vanilla &lt;code&gt;gettext&lt;/code&gt; package, not the &lt;code&gt;-dev&lt;/code&gt; version, and then &lt;strong&gt;finally&lt;/strong&gt; everything compiled successfully.&lt;/p&gt;
+&lt;p&gt;The following is the full list of packages that I needed in order to get the build to succeed:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;autoconf&lt;/li&gt;
+&lt;li&gt;automake&lt;/li&gt;
+&lt;li&gt;build-base&lt;/li&gt;
+&lt;li&gt;docbook-xsl&lt;/li&gt;
+&lt;li&gt;doxygen&lt;/li&gt;
+&lt;li&gt;findutils&lt;/li&gt;
+&lt;li&gt;gettext&lt;/li&gt;
+&lt;li&gt;git&lt;/li&gt;
+&lt;li&gt;krb5-dev&lt;/li&gt;
+&lt;li&gt;libwbclient&lt;/li&gt;
+&lt;li&gt;libtool&lt;/li&gt;
+&lt;li&gt;libxml2&lt;/li&gt;
+&lt;li&gt;libxslt&lt;/li&gt;
+&lt;li&gt;libunistring-dev&lt;/li&gt;
+&lt;li&gt;m4&lt;/li&gt;
+&lt;li&gt;musl-libintl&lt;/li&gt;
+&lt;li&gt;pkgconfig&lt;/li&gt;
+&lt;li&gt;openssl-dev&lt;/li&gt;
+&lt;li&gt;samba-dev&lt;/li&gt;
+&lt;li&gt;zlib-dev&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Note that &lt;code&gt;git&lt;/code&gt; is included just to clone the repo, and &lt;code&gt;build-base&lt;/code&gt; is the meta package I used for compiling C software since just installing something like &lt;code&gt;gcc&lt;/code&gt; will not include everything needed.&lt;/p&gt;
+</content>
     </item>
     
   </channel>

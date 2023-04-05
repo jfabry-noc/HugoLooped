@@ -5,8 +5,7 @@
     <link>https://looped.network/tags/kubernetes/</link>
     <description>Recent content in Kubernetes on LoopedNetwork</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <copyright>Copyright 2023 - LoopedNetwork</copyright>
+    <language>en-us</language>
     <lastBuildDate>Sat, 10 Sep 2022 18:27:23 -0400</lastBuildDate><atom:link href="https://looped.network/tags/kubernetes/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>kubectl logs Symbolic Link Error</title>
@@ -15,6 +14,23 @@
       
       <guid>https://looped.network/posts/kubectl-symbolic-link-error/</guid>
       <description>I recently ran across an interesting error with my development Kubernetes cluster, and while I still have no idea what I may have done to cause it, I at least figured out how to rectify it. As is commonly the case, most of the things I end up deploying to Kubernetes simply log to standard out so that I can view logs with the kubectl logs command. While running this against a particular deployment, though, I received an error:</description>
+      <content>&lt;p&gt;I recently ran across an interesting error with my development Kubernetes cluster, and while I still have no idea what I may have done to cause it, I at least figured out how to rectify it. As is commonly the case, most of the things I end up deploying to Kubernetes simply log to standard out so that I can view logs with the &lt;code&gt;kubectl logs&lt;/code&gt; command. While running this against a particular deployment, though, I received an error:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;failed to try resolving symlinks&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Looking at the details of the error message, it seemed that running a command like:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;kubectl logs -f -n &lt;span style=&#34;color:#f92672&#34;&gt;{&lt;/span&gt;namespace&lt;span style=&#34;color:#f92672&#34;&gt;}&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;{&lt;/span&gt;podname&lt;span style=&#34;color:#f92672&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Is looking for a symbolic link at the following path:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;/var/log/pods/{namespace}_{pod-uuid}/{namespace}&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;The end file itself seems to be something extremely simple, like a number followed by a &lt;code&gt;.log&lt;/code&gt; suffix. In my case, it was &lt;strong&gt;4.log&lt;/strong&gt;. That symbolic link &lt;em&gt;then&lt;/em&gt; points to a file at:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;/var/lib/docker/containers/{uuid}/{uuid}-json.log&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Where the &lt;strong&gt;uuid&lt;/strong&gt; is the UUID of the container in question.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; The directory above isn’t even viewable without being root, so depending on your setup you may need to use &lt;code&gt;sudo ls&lt;/code&gt; to be able to look at what’s there.&lt;/p&gt;
+&lt;p&gt;I was able to open the &lt;strong&gt;-json.log&lt;/strong&gt; file and validate that it had the information I needed, so I just had to create the missing symlink. I did that with:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo ln -s /var/lib/docker/containers/&lt;span style=&#34;color:#f92672&#34;&gt;{&lt;/span&gt;uuid&lt;span style=&#34;color:#f92672&#34;&gt;}&lt;/span&gt;/&lt;span style=&#34;color:#f92672&#34;&gt;{&lt;/span&gt;uuid&lt;span style=&#34;color:#f92672&#34;&gt;}&lt;/span&gt;-json.log 4.log
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Since my shell was already in the &lt;strong&gt;/var/log/pods/{namespace}_{pod-uuid}/{namespace}&lt;/strong&gt; directory, I didn’t need to give the full path to the actual link location, just specify the relative file of &lt;strong&gt;4.log&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Sure enough, after creating this I was able to successfully run &lt;code&gt;kubectl logs&lt;/code&gt; against the previously broken pod.&lt;/p&gt;
+</content>
     </item>
     
   </channel>

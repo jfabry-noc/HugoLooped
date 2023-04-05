@@ -1,123 +1,82 @@
-baseURL = "https://looped.network/"
-theme = "hugo-ficurinia"
-title = "LoopedNetwork"
-languageCode = "en"
-defaultContentLanguage = "en"
-
-# this will be included in the footer after the current year the site is last
-# built, followed by the (c) symbol
-# you can use markdown inside this field
-copyright = "Copyright 2023 - LoopedNetwork"
-
-paginate = 5  # number of articles per page in the index
-summaryLength = 70  # number of words for article summaries
-
+baseurl = "https://looped.network/"
+languageCode = "en-us"
+# Add it only if you keep the theme in the `themes` directory.
+# Remove it if you use the theme as a remote Hugo Module.
+theme = "terminal"
+paginate = 5
 
 [params]
-    author = "LoopedNetwork"
-    description = "The /dev/null of my life"  # this will be added as metadata
+  # dir name of your main content (default is `content/posts`).
+  # the list of set content will show up on your index page (baseurl).
+  contentTypeName = "posts"
 
-    posts = "posts"  # content directory where to find home page posts; default searches in "posts" and "post"
-    showPostsLink = true  # show or hide the link to the simple post list
-    extraContentDirs = []  # other content directories to render similarly to the home page
-    showcaseDir = "showcase"  # create a content directory that shows a special showcase section in the home page
+  # ["orange", "blue", "red", "green", "pink"]
+  themeColor = "pink"
 
-    # shows a specified single page as a home page, instead of the traditional articles list
-    # requires setting `homeSinglePage`
-    # goes well with extraContentDirs
-    showSinglePageAsHome = false
-    homeSinglePage = "/home"
+  # if you set this to 0, only submenu trigger will be visible
+  showMenuItems = 2
 
-    # It's best to put these icons in the "static" folder of your site
-    logo = "/logo.svg"
-    faviconIco = "/favicon.ico"  # 32x32
+  # show selector to switch language
+  showLanguageSelector = false
 
-    logoRightOfTitle = false  # positions the logo to the right of the title; default: false
+  # set theme to full screen width
+  fullWidthTheme = false
 
-    showTags = true  # show the Tags menu item; default true
-    showRss = true  # show the link for the RSS feed; default true
+  # center theme with default width
+  centerTheme = false
 
-    imageInArticlePreview = false # show images in article preview; default false
-    fitImageInArticlePreview = false  # make article preview images fit the article preview instead of getting cropped
-    articleSummary = true  # show a summary in article preview; default true
+  # if your resource directory contains an image called `cover.(jpg|png|webp)`,
+  # then the file will be used as a cover automatically.
+  # With this option you don't have to put the `cover` param in a front-matter.
+  autoCover = true
 
-    fontFamily = "JetBrains Mono"  # changes the font, default "JetBrains Mono"
-    titleFontFamily = "JetBrains Mono"  # font used for titles and headings
-    monospaceFontFamily = "JetBrains Mono"  # changes the monospace font for code, default "JetBrains Mono"
+  # set post to show the last updated
+  # If you use git, you can set `enableGitInfo` to `true` and then post will automatically get the last updated
+  showLastUpdated = false
 
-    # multipliers applied to font sizes, useful for custom fonts that may be too big or too small
-    titleFontSizeMultiplier = 1.0
-    mainFontSizeMultiplier = 1.0
-    monoFontSizeMultiplier = 1.0
+  # set a custom favicon (default is a `themeColor` square)
+  favicon = "/favicon.ico"
 
-    contentWidth = "1000px"  # maximum width of the site content, css syntax
+  # Provide a string as a prefix for the last update date. By default, it looks like this: 2020-xx-xx [Updated: 2020-xx-xx] :: Author
+  # updatedDatePrefix = "Updated"
 
-    paperCards = false  # enable paper card style; default false
-    buttonTags = false  # enable button tag style; default false
-    tagsInArticlePreview = true  # enable tags list in the article preview card
-    gridView = false  # show post list as a grid. goes well with paperCards
-    bigArticleTitle = false  # makes the title in the single article view bigger
-    navtype = "standard"  # changes the style of the pagination, available styles are: "standard", "circles"
-    enableShadow = false  # shows a shadow around some elements
-    menuStyle = "standard"  # changes the style of the main site navigation menu, available styles are: "standard", "buttons"
+  # set all headings to their default size (depending on browser settings)
+  # oneHeadingSize = true # default
 
-    enableSearch = true  # enable search page
-    searchbarEverywhere = true  # if the searchbar should be shown in every page; requires enableSearch
-    searchMenuLink = false  # add a search link to the navigation menu; requires enableSearch
-    mobileHamburgerNav = false  # alternative hamburger menu layout for the main nav menu when screen is small
+  # whether to show a page's estimated reading time
+  readingTime = true
 
-    enableFeatured = false  # enable a particular view for articles marked as featured (featured: true in the article frontmatter)
+  # whether to show a table of contents
+  # can be overridden in a page's front-matter
+  # Toc = false # default
 
-    underlineTitleLinks = false  # show an underline also for links that are titles
+  # set title for the table of contents
+  # can be overridden in a page's front-matter
+  # TocTitle = "Table of Contents" # default
 
-    enableShareOnFediverse = false  # enable a button at the end of an article to share it on the fediverse
-    tocBeforeImage = false  # show the table of contents before the main article image; default false
 
-    # you can customize all of the colors in this theme
-    # Colors are defined in data/colors.yml
+[languages]
+  [languages.en]
+    languageName = "English"
+    title = "LoopedNetwork"
+    subtitle = "The /dev/null of my life."
+    owner = "LoopedNetwork"
+    keywords = ""
+    copyright = ""
+    menuMore = "Show more"
+    readMore = "Read more"
+    readOtherPosts = "Read other posts"
+    newerPosts = "Newer posts"
+    olderPosts = "Older posts"
+    missingContentMessage = "Page not found..."
+    missingBackButtonLabel = "Back to home page"
 
-    # alternative sidebar layout
-    enableSidebarLayout = false
-    tocInSidebar = false  # if the sidebar is enbabled, show the TOC in the sidebar
+    [languages.en.params.logo]
+      logoText = "LoopedNetwork"
+      logoHomeLink = "/"
 
-    # redirect to baseURL if current URL host doesn't match
-    # useful if deploying in gitlab pages with custom domain and don't want
-    # the username.gitlab.io/website url to persist
-    # this requires you to set baseURL (see above)
-    forceRedirect = false
-
-    infiniteScrolling = false  # activates infinite scrolling instead of regular pagination
-    enableFooterColumns = false  # activates footer columns, as described below
-    enableJumbotron = false  # enables jumbotron, as described below
-    # related articles will be selected randomly based on tags and shown at
-    # the bottom of the article, after the comments
-    enableRelatedArticles = false
-    relatedArticlesNum = 2  # how many related articles to show
-    randomRelated = false  # sorts related articles in random order (randomized at built time)
-
-[menu]
-    # these links will be added to the main navigation menu, sorted by weight
-    # other elements in this menu are added automatically from the "pages" folder
-    # the folder it will look into can be customized with the pages variable
-    # in params above
-    [[menu.main]]
+    [languages.en.menu]
+      [[languages.en.menu.main]]
         identifier = "about"
         name = "About"
-        url = "/about/"
-        weight = 10
-    # these links (menu.icons) will be added as icon links below the main nav
-    [[menu.icons]]
-        identifier = "github"
-        name = "GitHub"
-        url = "https://github.com/jfabry-noc"
-        weight = 10
-    [[menu.icons]]
-        identifier = "mastodon"
-        name = "Mastodon"
-        url = "https://mastodon.online/@looped_network"
-        weight = 20
-
-# this section is necessary if you want infinite scrolling
-# it allows to output the article list as paged JSON so that "pages" can be retrieved via javascript
-[outputs]
-    home = ["HTML"]
+        url = "/about"

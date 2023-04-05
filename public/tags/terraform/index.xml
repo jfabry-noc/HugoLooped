@@ -5,8 +5,7 @@
     <link>https://looped.network/tags/terraform/</link>
     <description>Recent content in Terraform on LoopedNetwork</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <copyright>Copyright 2023 - LoopedNetwork</copyright>
+    <language>en-us</language>
     <lastBuildDate>Tue, 05 Jul 2022 18:19:08 -0400</lastBuildDate><atom:link href="https://looped.network/tags/terraform/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Terraform Cloud Variables Are All Strings</title>
@@ -16,6 +15,27 @@
       <guid>https://looped.network/posts/terraform-cloud-variables/</guid>
       <description>This post easily falls into the “so ridiculous that it shouldn’t be a post” category. However, considering how long I ended up stuck on it earlier today, I figure it’s worth making if it stands a chance of helping even one other person avoid the same fate as me. 😅
 I’ve started doing a little bit of work with the Terraform Cloud API. Specifically, I was looking at being able to update a workspace variable through code.</description>
+      <content>&lt;p&gt;This post easily falls into the “so ridiculous that it shouldn’t be a post” category. However, considering how long I ended up stuck on it earlier today, I figure it’s worth making if it stands a chance of helping even one other person avoid the same fate as me. 😅&lt;/p&gt;
+&lt;p&gt;I’ve started doing a little bit of work with the Terraform Cloud API. Specifically, I was looking at being able to update a &lt;a href=&#34;https://www.terraform.io/cloud-docs/api-docs/workspace-variables&#34;&gt;workspace variable&lt;/a&gt; through code. In this case, I was trying to change a variable I called &lt;code&gt;replica_count&lt;/code&gt; which, if the name wasn’t enough of a giveaway, I was using to track how many replicas should be used in a Kubernetes container spec.&lt;/p&gt;
+&lt;p&gt;I found that I was able to easily get back all of my workspace variables via a &lt;code&gt;GET&lt;/code&gt; to:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;https://app.terraform.io/api/v2/workspaces/{workspace_id}/vars/
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;However, trying to make a &lt;code&gt;PATCH&lt;/code&gt; to&amp;hellip;&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;https://app.terraform.io/api/v2/workspaces/{workspace_id}/vars/{variable_id}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&amp;hellip; with a body in JSON to specify the change resulted in a 500 internal server error response.&lt;/p&gt;
+&lt;p&gt;The JSON in the body wasn’t very complex. I only needed to modify the value. As the documentation specifies, and the &lt;code&gt;type&lt;/code&gt; must be set to “vars” and the &lt;code&gt;id&lt;/code&gt; must be set to the ID of the variable to change. This is a bit odd to me since I &lt;em&gt;also&lt;/em&gt; have to give the ID in the URL, but it’s not a big deal. The &lt;code&gt;attributes&lt;/code&gt; property then can optionally contain whatever property or properties need to be updated. In my case, the JSON just looked like:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;{
+    “data”: {
+        “id”: var_id,
+        “type”: “vars”,
+        “attributes”: {
+            “value”: 2
+        }
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;There isn’t a lot to go wrong here&amp;hellip; but I managed to do it! I finally figured out what was wrong when I changed my &lt;code&gt;PATCH&lt;/code&gt; to a &lt;code&gt;GET&lt;/code&gt; just to validate that my JSON had to be the culprit. The &lt;code&gt;GET&lt;/code&gt; responds with JSON which is &lt;em&gt;very&lt;/em&gt; similar to what I needed to send, and that’s what tipped me off to the fact that the value of the variable is &lt;strong&gt;always&lt;/strong&gt; a string, even if I’m thinking of it as a number in my head. So my &lt;code&gt;value&lt;/code&gt; line needed to be:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;“value”: “2”
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;After seeing that in the response to my &lt;code&gt;GET&lt;/code&gt;, I updated my JSON, re-&lt;code&gt;PATCH&lt;/code&gt;ed, and saw that everything was successful.&lt;/p&gt;
+</content>
     </item>
     
   </channel>
