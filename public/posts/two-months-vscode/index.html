@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html class="" lang="en"><head>
+    
+    <meta name="viewport" content="width=device-width" />
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=7" />
+
+    <link
+    rel="icon"
+    href='/favicon.png'
+/>
+<link
+    rel="shortcut icon"
+    href='/favicon.ico'
+    type="image/x-icon"
+/>
+<link
+    rel="apple-touch-icon"
+    href='/apple-touch-icon.png'
+/>
+
+<title>
+        
+            Two Months With VSCode  &ndash;
+        
+        LoopedNetwork
+    </title>
+
+    
+    <link href="/symbols-nerd-font/symbols-nerd-font.css" rel="stylesheet" integrity="sha512-lydow8GLOLlYNOtHlksNCmGWWCBsbIEtikXpHzfWqx78HLlyQZHOzyLwPpKol4Th6aCwLUXOfODVYgwrd3nwKQ=="/>
+    <link href="/jetbrains-mono/jetbrains-mono.css" rel="stylesheet" integrity="sha512-tJxlgL6v1Y7kFf+qB8SloaAMKnOAw6WouknxXtIjkBux9Y/9aX81EUWOJO8c/3l98DmjG8brr4to7zaez606Fg=="/>
+
+    
+    
+    <link type="text/css" rel="stylesheet" href=https://looped.network/css/styles.abbd6311bb4b6ca58f8e7398140529245ae0f6428b759fcd830742eee2619eabb900ba9914a9affb82aa9a16a9b9ea727bb315315a976a0db0e7513a5f12c504.css integrity="sha512-q71jEbtLbKWPjnOYFAUpJFrg9kKLdZ/NgwdC7uJhnqu5ALqZFKmv&#43;4Kqmhapuepye7MVMVqXag2w51E6XxLFBA==" />
+<meta name="author" content="LoopedNetwork" />
+
+    
+        <meta name="keywords" content='Editor, Vim, VSCode' />
+    
+    
+        <meta name="description" content="n about before, Vim (specifically Neovim) is my editor of choice. I use it with Python, Go, Groovy, and to write these posts in Markdown. I find Vim&amp;rsquo;s modal setup to be the most efficient way to edit text, and after becoming (moderately) proficient with the motions I feel like I&amp;rsquo;m significantly faster than if I had to bother with arrow keys and various combinations of Command, Ctrl, etc." />
+    
+
+<meta property="og:site_name"
+    content='LoopedNetwork' />
+
+    <meta property="og:title" content="Two Months With VSCode" />
+    <meta property="og:type" content="article" />
+    
+    <meta
+        property="article:author" content="LoopedNetwork" />
+    <meta
+        property="article:published_time"
+        content='2023-04-08T18:07:57Z-0400' />
+    
+        
+            <meta property="article:tag" content="Editor" />
+        
+            <meta property="article:tag" content="Vim" />
+        
+            <meta property="article:tag" content="VSCode" />
+        
+    
+    <meta property="og:url" content="https://looped.network/posts/two-months-vscode/" />
+    
+    
+    <meta property="og:image"
+        content="https://looped.network/img/icon.svg" />
+    
+        <meta property="og:description" content="As I&amp;rsquo;ve written about before, Vim (specifically Neovim) is my editor of choice. I use it with Python, Go, Groovy, and to write these posts in Markdown. I " />
+    
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:domain"
+      content='looped.network'
+/>
+<meta property="twitter:url" content="https://looped.network/posts/two-months-vscode/" />
+
+
+    <meta name="twitter:title" content="Two Months With VSCode" />
+    
+    
+    
+    <meta name="twitter:image"
+        content="https://looped.network/img/icon.svg" />
+    
+        <meta name="twitter:description" content="As I&amp;rsquo;ve written about before, Vim (specifically Neovim) is my editor of choice. I use it with Python, Go, Groovy, and to write these posts in Markdown. I " />
+    
+
+<link rel="manifest" href="/manifest/index.json" />
+</head>
+
+
+<body>
+        <div id="baseContainer"><header class="">
+<div class="titleAndSearchContainer">
+        <div id="titleContainer">
+            
+                <a class="unstyledLink" href="/">
+                    <img src='/logo.svg' alt='Logo'/>
+                </a>
+            
+            <div class="rightOfLogo">
+                <div class="titleAndHamburger">
+                    <h1>
+                        <a class="unstyledLink" href="/">LoopedNetwork</a>
+                        
+                    </h1>
+                    
+                </div>
+                <div id="wide_nav"><nav>
+    
+    <ul id="main-nav">
+        <li><a href="/">Home</a></li>
+        
+            <li><a href="/posts">Posts</a></li>
+        
+        
+        
+        
+        
+        
+            <li><a href="/about/">About</a></li>
+        
+        
+            <li><a href="/tags">Tags</a></li>
+        
+        
+    </ul>
+</nav>
+</div>
+            </div>
+        </div>
+        <div class="search">
+    <input id="searchbar" type="text" placeholder='Search' />
+    <a class="nerdlink" onclick="newSearch();">&#xf002;</a>
+</div>
+<script>
+    function newSearch() {
+        let term = searchbar.value.trim();
+        if (!term) return;
+        location.href = `/search?q=${term}`;
+    }
+    searchbar.onkeyup = (ev) => {if (ev.keyCode == 13) newSearch()};
+</script>
+
+    </div>
+    <div id="links">
+        <a
+    
+        rel="noreferrer"
+    
+    target="_blank"
+    class="nerdlink"
+    href="/index.xml">
+    
+    
+        &#xf09e;
+    
+    <span>
+        RSS
+    </span>
+</a>
+
+        
+        <a
+    
+        rel="noreferrer"
+    
+    target="_blank"
+    class="nerdlink"
+    href="https://github.com/jfabry-noc">
+    
+    
+        &#xf09b;
+    
+    <span>
+        GitHub
+    </span>
+</a>
+<a
+    
+        rel="me"
+    
+    target="_blank"
+    class="nerdlink"
+    href="https://social.sdf.org/@loopednetwork">
+    
+    
+        <svg class='pseudofont' xmlns:svg='http://www.w3.org/2000/svg' width='16' height='16' viewbox='0 0 16 16'><path d='M 7.4779094,-1.598624e-6 C 5.5602384,0.0156984 3.7155894,0.2233384 2.6405814,0.7170384 c 0,0 -2.13206093,0.9537 -2.13206093,4.20766 0,0.74512 -0.01448,1.63603 0.0091,2.58084 0.07742,3.1821946 0.58336693,6.3183886 3.52553593,7.0971276 1.356568,0.359063 2.521335,0.434289 3.45936,0.382729 1.701085,-0.09431 2.6560206,-0.607063 2.6560206,-0.607063 l -0.05611,-1.234252 c 0,0 -1.2156316,0.383272 -2.5808476,0.33656 -1.352609,-0.04639 -2.780561,-0.145832 -2.999328,-1.80651 -0.0202,-0.145872 -0.03031,-0.301902 -0.03031,-0.465714 0,-10e-7 1.327834,0.324572 3.010574,0.40167 1.028943,0.0472 1.993827,-0.06028 2.9738766,-0.177218 1.879445,-0.224425 3.515901,-1.382448 3.721577,-2.4405646 0.32407,-1.666815 0.297376,-4.067605 0.297376,-4.067605 0,-3.25396 -2.131943,-4.20766 -2.131943,-4.20766 C 11.288476,0.2233384 9.4426784,0.0156784 7.5250084,-1.598624e-6 Z M 5.3076104,2.5424984 c 0.798781,0 1.403595,0.30701 1.803551,0.92113 l 0.388886,0.65181 0.388884,-0.65181 c 0.399875,-0.61412 1.00469,-0.92113 1.803551,-0.92113 0.6903266,0 1.2465526,0.24267 1.6713186,0.71609 0.411755,0.47342 0.61677,1.11337 0.61677,1.91862 v 3.939988 h -1.560986 v -3.824218 c 0,-0.80613 -0.339166,-1.21531 -1.0176126,-1.21531 -0.750129,0 -1.126049,0.48533 -1.126049,1.44509 v 2.09324 h -1.551753 v -2.09324 c 0,-0.95976 -0.376039,-1.44509 -1.126168,-1.44509 -0.678446,0 -1.017613,0.40918 -1.017613,1.21531 v 3.824218 h -1.560985 v -3.939988 c 0,-0.80525 0.205053,-1.4452 0.616889,-1.91862 0.424685,-0.47342 0.980911,-0.71609 1.671317,-0.71609 z' /></svg>
+    
+    <span>
+        Mastodon
+    </span>
+</a>
+
+    </div>
+    
+
+</header>
+<div id="contentContainer">
+                <div id="content">
+                    <main>
+<article class="card single">
+    
+        <h1>Two Months With VSCode</h1>
+    
+    
+        <p class="date">
+            <span title='Date'> </span>
+    2023-04-08
+
+</p>
+    
+    
+    
+    
+    <div><p>As I&rsquo;ve <a href="https://looped.network/posts/neovim-lsp/">written about before</a>, Vim (specifically <a href="https://neovim.io/">Neovim</a>) is my editor of choice. I use it with Python, Go, Groovy, and to write these posts in Markdown. I find Vim&rsquo;s modal setup to be the most efficient way to edit text, and after becoming (moderately) proficient with the motions I feel like I&rsquo;m significantly faster than if I had to bother with arrow keys and various combinations of Command, Ctrl, etc.</p>
+<p>However, for the past couple of months I&rsquo;ve spent the majority of my time writing C# to create a binary PowerShell module. This also caused me to start my latest <a href="https://github.com/jfabry-noc/TootSharp">personal project</a> in C# since I&rsquo;m relatively new to it and wanted to get as much experience as I could. While <a href="https://www.omnisharp.net/">OmniSharp</a> exists and actually forms the basis for the <a href="https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csharp">C# extension in VSCode</a>, I didn&rsquo;t have a great deal of success using OmniSharp by itself. It <em>worked</em>, but I wanted a lot more out of it, especially for a language I was trying to learn at the same time. I tried writing some C# with VSCode and had much better success. As a result, I bit the bullet and started using VSCode any time I was writing C#.</p>
+<p>I previously used VSCode pretty much from when it was released until late 2019. During that time I was working as a sysadmin in a Windows-centric environment, meaning that PowerShell was the overwhelming majority of what I wrote and VSCode just seemed natural as it replaced the <a href="https://learn.microsoft.com/en-us/powershell/scripting/windows-powershell/ise/introducing-the-windows-powershell-ise?view=powershell-7.3">PowerShell ISE</a>. However, when I took a new role in 2019 and began working in Python and Groovy, I started using Vim instead and became fairly enamored with it. I figured as a Vim aficionado I&rsquo;d share some thoughts on coming back to VSCode for the past few months.</p>
+<h1 id="pros">Pros</h1>
+<p>The biggest benefit is that, given how ubiquitous it&rsquo;s become, basically <strong>everything</strong> imaginable just <em>works</em> with it. You install an extension with the click of a button, wait a few seconds, and suddenly you have an LSP, syntax support, debugging, etc. all ready to go. The same goes for new supporting tech, like <a href="https://github.com/features/copilot">GitHub Copilot</a>. While Copilot definitely works with Neovim as well, I found the experience to be a bit more polished in VSCode.</p>
+<p>Debugging in particular was extremely easy, and quickly made a big difference as I worked through some troublesome issues that would&rsquo;ve been much more difficult to get to the root of without it. I know you can do very similar things in Vim, but it&rsquo;s a massive pain to get everything set up, make sure you have something bound for setting and unsetting breakpoints, etc. (Note: &ldquo;massive pain&rdquo; is obviously relative. If you&rsquo;re more proficient in configuring Vim than I am it may be a breeze.)</p>
+<p>Out of the box, VSCode has the &ldquo;normal&rdquo; text editing experience, but the <a href="https://marketplace.visualstudio.com/items?itemName=vscodevim.vim">Vim extension</a> allows it to become a modal editor in its own right with the majority of the motions I&rsquo;m used to available out of the box. This wasn&rsquo;t perfect, though, as I&rsquo;ll touch on in the next section.</p>
+<p>VSCode also has themes for basically any palette I can imagine, again owing to its immense popularity. I ended up swapping themes a handful of times in just a matter of months not because there was anything wrong with the one I had been using but because there were so many options. Once again, Vim has a ton of themes as well, and there&rsquo;s almost always overlap between the two. I think discovering themes is a little easier with VSCode, though, and as per the norm everything just works when you install the theme extension. Vim often requires tweaks to my config file based on the theme to ensure I&rsquo;m getting the right palette, color support, italics support, etc.</p>
+<p>I had a love-hate relationship with the terminal integrated into VSCode. While I found it a bit clunky for most tasks, it was useful for quickly jumping to a CLI, opening a PowerShell session, compiling and importing my module, and then testing whatever functionality I had just been working on. This became even nicer after I discovered that <strong>Ctrl + `</strong> would toggle focus from the editor to the terminal. Hitting it a second time with the terminal in focus would shift focus back to the editor and <em>minimize</em> the terminal, which I highly appreciated.</p>
+<p>The ability to work with non-code files in a meaningful way was extremely nice. Along with the README for my repos, I often write various other documentation in Markdown. Being able to quickly preview what that would look like inside of the editor was very handy, as was the fact that I found <a href="https://marketplace.visualstudio.com/items?itemName=yzane.markdown-pdf">an extension</a> which would allow me to convert that Markdown to a PDF in the instance I was sharing it with customers. Likewise, much of my coding involves REST APIs, so I&rsquo;m frequently looking at raw JSON responses. Being able to paste that into a file in VSCode, right-click, and select to format the document into a whitespace-friendly version was extremely nice. Previously I would end up having to paste the same JSON into something like <a href="https://jsonlint.com/">JSONLint</a>.</p>
+<h1 id="cons">Cons</h1>
+<p>The most immediate con to VSCode, especially as someone who mainly uses Vim, is that it is unbelievably slow while being a massive drain on system resources. Even on a MacBook Pro spec&rsquo;d out for development, it would lag with a suprising degree of frequency while consuming several gigabytes of RAM. I was initially curious if this was a problem specific to C#, so I tried writing a little Python with it. This experienced the same issues; fixing a warning from Pylint and re-saving the file would often require 5+ seconds for the warning to be removed. I didn&rsquo;t expect performance to be amazing since VSCode is an <a href="https://www.electronjs.org/">Electron</a> application, after all, but I also didn&rsquo;t expect it to be quite as bad as it is.</p>
+<p>While the aforementioned Vim extension makes editing tolerable, I found that was only the case on my MacBook simply because there&rsquo;s less overlap in commands between Vim and VSCode itself. For example, on my MacBook I can use <strong>Cmd + f</strong> to open a search because it doesn&rsquo;t overlap with anything. On my Linux laptop, though, hitting <strong>Ctrl + f</strong> to do the same was problematic depending on what mode I happened to be in. For example, if I was in Normal mode, <strong>Ctrl + f</strong> would take the Vim action of jumping forward one page. I had to swap to Insert mode and <em>then</em> hit <strong>Ctrl + f</strong> to search. It&rsquo;s not a big deal, but it was enough to be annoying.</p>
+<p>Since the time I last used it, VSCode has become even more of a one-stop-shop for developers, with out of the box integrations for all sorts of things. While that could be helpful if I found them useful, for anything I didn&rsquo;t use it was just an additional drain. For example, VSCode has support for managing a git repository from right within the editor. I tried it out but ultimately found myself preferring to just run <code>git</code> commands from a terminal the way I normally do. While having extras doesn&rsquo;t necessarily hurt anything (aside from eating up yet more resources), it reminds me a bit of back when Opera was a web browser that also had an email client, IRC client, etc.</p>
+<h1 id="wrap-up">Wrap-up</h1>
+<p>Would I consider switching from Vim to VSCode? While I wouldn&rsquo;t be overly bothered if I found myself in an environment where I <em>had</em> to use VSCode, I don&rsquo;t think I&rsquo;d end up swapping to it for my non-C# work. I just value the speed and efficiency of Vim a little too much at the moment. If VSCode was a little bit leaner, though, I could see it becoming a more attractive option.</p>
+</div>
+</article>
+
+    <hr />
+    <p class="articleTagsContainer">
+        <span> </span>
+        <strong>Tags:</strong>
+        
+            <a
+                
+                href="/tags/editor">#Editor</a>
+        
+            <a
+                
+                href="/tags/vim">#Vim</a>
+        
+            <a
+                
+                href="/tags/vscode">#VSCode</a>
+        
+    </p>
+
+
+
+
+
+
+                    </main><footer>
+    <hr />
+
+<p><small>
+        2023 &copy; Copyright 2023 - LoopedNetwork
+    </small></p>
+    <p><small>
+        <a href='https://gitlab.com/gabmus/hugo-ficurinia'>Ficurinia theme</a> for <a href='https://gohugo.io'>Hugo</a> by <a href='https://gabmus.org'>Gabriele Musco</a>. Licensed under <a href='https://www.gnu.org/licenses/agpl-3.0.html'>GNU AGPLv3</a>.
+    </small></p>
+</footer>
+</div>
+            </div>
+        </div>
+
+
+</body>
+</html>

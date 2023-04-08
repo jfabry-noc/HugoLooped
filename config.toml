@@ -9,7 +9,7 @@ defaultContentLanguage = "en"
 # you can use markdown inside this field
 copyright = "Copyright 2023 - LoopedNetwork"
 
-paginate = 5  # number of articles per page in the index
+paginate = 10  # number of articles per page in the index
 summaryLength = 70  # number of words for article summaries
 
 
