@@ -7,7 +7,25 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Copyright 2023 - LoopedNetwork</copyright>
-    <lastBuildDate>Sat, 08 Apr 2023 18:07:57 -0400</lastBuildDate><atom:link href="https://looped.network/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 15 Apr 2023 15:57:30 -0400</lastBuildDate><atom:link href="https://looped.network/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>pylint</title>
+      <link>https://looped.network/tags/pylint/</link>
+      <pubDate>Sat, 15 Apr 2023 15:57:30 -0400</pubDate>
+      
+      <guid>https://looped.network/tags/pylint/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Python</title>
+      <link>https://looped.network/tags/python/</link>
+      <pubDate>Sat, 15 Apr 2023 15:57:30 -0400</pubDate>
+      
+      <guid>https://looped.network/tags/python/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>Editor</title>
       <link>https://looped.network/tags/editor/</link>

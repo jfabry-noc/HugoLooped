@@ -11,3 +11,4 @@ I'm a software developer (Python, C#, Groovy) with a background in DevOps (Puppe
 - [Mastodon](https://social.sdf.org/@loopednetwork)
 - [Goodreads](https://goodreads.com/loopednetwork)
 - [WakaTime](https://wakatime.com/@LoopedNetwork)
+- [Medium (archive)](https://loopednetwork.medium.com/)

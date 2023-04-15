@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Python on LoopedNetwork</title>
+    <link>https://looped.network/tags/python/</link>
+    <description>Recent content in Python on LoopedNetwork</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Copyright 2023 - LoopedNetwork</copyright>
+    <lastBuildDate>Sat, 15 Apr 2023 15:57:30 -0400</lastBuildDate><atom:link href="https://looped.network/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Pylint Import Error</title>
+      <link>https://looped.network/posts/pylint-import-error/</link>
+      <pubDate>Sat, 15 Apr 2023 15:57:30 -0400</pubDate>
+      
+      <guid>https://looped.network/posts/pylint-import-error/</guid>
+      <description>I recently found myself quickly checking in on a Python project outside of my normal Neovim workflow. I was basically just trying to quickly re-familiarize myself with some code that I hadn&amp;rsquo;t looked at or thought about in a few months before deploying it for a customer. If I&amp;rsquo;m feeling particularly lazy when doing something like this, I&amp;rsquo;ll often open something up in Sublime rather than Neovim just because it allows me to quickly scroll through a project and hop between files.</description>
+    </item>
+    
+  </channel>
+</rss>
