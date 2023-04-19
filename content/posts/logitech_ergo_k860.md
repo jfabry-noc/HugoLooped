@@ -8,7 +8,7 @@ tags:
   - Ergonomic
 ---
 
-# Background
+## Background
 
 I recently ran into some issues with the keyboard I had been using for the past few years and decided it was time to opt for something new. The keyboard I was moving away from was the [Keychron K2 V2](https://www.keychron.com/products/keychron-k2-wireless-mechanical-keyboard). I've had a love-hate relationship with mechanical keyboards, flipping between feeling like they give me a really good typing experience and thinking they sacrifice too much in terms of ergonomics to be worth the price of admission. In this particular case I was leaning toward the latter, so I decided to start looking into ergonomic keyobards.
 
@@ -18,7 +18,7 @@ During the time that I used the Natural 4000 at work, I also procured a [Microso
 
 When I started a new job a few years back, my boss had asked me what accessories I'd like with my new laptop. To compliment the [Logitech MX Ergo](https://www.logitech.com/en-us/products/mice/mx-ergo-wireless-trackball-mouse.html) I requested, I also had them buy a [Logitech Wave (K350)](https://www.logitech.com/en-us/products/keyboards/k350-wave-ergonomic.920-001996.html). While ergonomic, the Wave wasn't a split keyboard. While I don't know if I feel like it gave me the same benefits that I got from a fully split board, it still worked well enough. I used it every day for a few years until the 'o' key stopped working reliably on it. That's when I eventually decided to get back into mechanical keyboards for a bit, going through several of those since no one who uses a mechanical keyboard seems to be able to stick with the same one for very long.
 
-# Decision
+## Decision
 
 I had been starting to move back to the "mechanical keyboards are overblown" position and wanted to focus on something a bit more ergonomic again. Of course, it's possible to have the best of both worlds with something like the [Kinesis Advantage360](https://kinesis-ergo.com/keyboards/advantage360/), but I wasn't looking to spend much north of $100 USD on a keyboard. Spending $300 - $400 on something from Kinesis just feels wild to me. I know several people who own and love their products, but I just can't justify it.
 
@@ -26,7 +26,7 @@ Microsoft continues to produce ergonomic keyboards, such as the Natural 4000's s
 
 Ultimately, I decided to go back to the well with Logitech and buy the [Logitech Ergo K860](https://www.logitech.com/en-us/products/keyboards/k860-split-ergonomic.920-009166.html). To me it seemed very similar to the Microsoft Surface Ergonomic but with support for both Windows and macOS.
 
-# Keyboard
+## Keyboard
 
 The keyboard itself is quite good. It's a simple matte black, which is nice since it doesn't show smudges; I can't fathom why any company would make a glossy keyboard, which is how the Microsoft Sculpt was.
 
@@ -57,7 +57,7 @@ That is absolutely not true; it's some kind of plastic/polymer that simply looks
 
 I think a padded wrist rest with a plastic surface patterned to **look** like fabric is kind of the best of both worlds; it looks classy but also offers a surface that won't accumulate anything and is simple to clean if it somehow does.
 
-# Conclusion
+## Conclusion
 
 Having used the K860 for about a month now, I'm quite happy with it. Various reviews online will complain that it doesn't feature backlighting, but I honestly couldn't care less about that. I wanted a keyboard that would give me a solid and comfortable typing experience, and that's exactly what the K860 offers. It's worth mentioning that, especially coming from a couple of TKL keyboards, it's a _massive_ device that will take up a lot of desk space. My [new desk setup](https://looped.network/posts/home-office-upgrade/) allows for that, but only because I use a trackball. If I wanted to place a mouse next to this keyboard, I feel like it would be fairly awkward to move around. It's probably also worth mentioning that I'm well past my gaming days, so I'm not attempting to use it for any PC games. I'd have to imagine that trying to play a game like _StarCraft_ or _World of Warcraft_ that involves using the entire keyboard with a single hand could be cumbersome.
 

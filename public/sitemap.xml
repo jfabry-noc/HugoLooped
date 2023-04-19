@@ -2,6 +2,24 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://looped.network/tags/fedora/</loc>
+    <lastmod>2023-04-18T20:22:04-04:00</lastmod>
+  </url><url>
+    <loc>https://looped.network/posts/fedora-38-release/</loc>
+    <lastmod>2023-04-18T20:22:04-04:00</lastmod>
+  </url><url>
+    <loc>https://looped.network/tags/linux/</loc>
+    <lastmod>2023-04-18T20:22:04-04:00</lastmod>
+  </url><url>
+    <loc>https://looped.network/</loc>
+    <lastmod>2023-04-18T20:22:04-04:00</lastmod>
+  </url><url>
+    <loc>https://looped.network/posts/</loc>
+    <lastmod>2023-04-18T20:22:04-04:00</lastmod>
+  </url><url>
+    <loc>https://looped.network/tags/</loc>
+    <lastmod>2023-04-18T20:22:04-04:00</lastmod>
+  </url><url>
     <loc>https://looped.network/tags/ergonomic/</loc>
     <lastmod>2023-04-16T16:01:46-04:00</lastmod>
   </url><url>
@@ -12,15 +30,6 @@
     <lastmod>2023-04-16T16:01:46-04:00</lastmod>
   </url><url>
     <loc>https://looped.network/posts/logitech_ergo_k860/</loc>
-    <lastmod>2023-04-16T16:01:46-04:00</lastmod>
-  </url><url>
-    <loc>https://looped.network/</loc>
-    <lastmod>2023-04-16T16:01:46-04:00</lastmod>
-  </url><url>
-    <loc>https://looped.network/posts/</loc>
-    <lastmod>2023-04-16T16:01:46-04:00</lastmod>
-  </url><url>
-    <loc>https://looped.network/tags/</loc>
     <lastmod>2023-04-16T16:01:46-04:00</lastmod>
   </url><url>
     <loc>https://looped.network/tags/pylint/</loc>
@@ -162,9 +171,6 @@
     <lastmod>2022-09-17T18:30:30-04:00</lastmod>
   </url><url>
     <loc>https://looped.network/posts/manjaro-invalid-corrupt-package/</loc>
-    <lastmod>2022-09-17T18:30:30-04:00</lastmod>
-  </url><url>
-    <loc>https://looped.network/tags/linux/</loc>
     <lastmod>2022-09-17T18:30:30-04:00</lastmod>
   </url><url>
     <loc>https://looped.network/tags/manjaro/</loc>

@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Copyright 2023 - LoopedNetwork</copyright>
-    <lastBuildDate>Sun, 16 Apr 2023 16:01:46 -0400</lastBuildDate><atom:link href="https://looped.network/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 18 Apr 2023 20:22:04 -0400</lastBuildDate><atom:link href="https://looped.network/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Fedora 38 Release</title>
+      <link>https://looped.network/posts/fedora-38-release/</link>
+      <pubDate>Tue, 18 Apr 2023 20:22:04 -0400</pubDate>
+      
+      <guid>https://looped.network/posts/fedora-38-release/</guid>
+      <description>I saw on Mastodon earlier today that Fedora 38 was released. I had checked several weeks ago on when it was expected, and while I knew it was going to be soon, it had fallen off my radar while I&amp;rsquo;ve been preoccupied with a few other things. While I tend to be a bit more cautious with my work machines, on my personal machines I typically pull the trigger on major new OS releases with a fairly cavalier attitude, so as soon as I had a moment I went to get the upgrade rolling.</description>
+    </item>
+    
     <item>
       <title>Logitech Ergo K860 Keyboard</title>
       <link>https://looped.network/posts/logitech_ergo_k860/</link>
@@ -127,8 +136,8 @@ The scrollbars were prominent because they were meant to be used. You were expec
       <guid>https://looped.network/posts/manjaro-invalid-corrupt-package/</guid>
       <description>As the title alludes to, this morning I tried updating my Pinebook Pro running Manjaro Linux through my normal method:
 sudo pacman -Syu Today, this resulted in an error message about the libibus package:
- warning: could not fully load metadata for package libibus-1.5.26-2 error: failed to prepare transaction (invalid or corrupted package)
- Fun. I first wanted to see if it was really just this package that was causing the problem or if there were other issues.</description>
+warning: could not fully load metadata for package libibus-1.5.26-2 error: failed to prepare transaction (invalid or corrupted package)
+Fun. I first wanted to see if it was really just this package that was causing the problem or if there were other issues.</description>
     </item>
     
     <item>

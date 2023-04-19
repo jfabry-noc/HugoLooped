@@ -227,7 +227,13 @@
 <p>My only real issue with it is that I the link to my <a href="https://mastodon.online/@looped_network">Mastodon</a> account doesn&rsquo;t include the <code>rel=&quot;me&quot;</code> part that&rsquo;s required for my site to show up as being verified:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;me&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://social.sdf.org/@loopednetwork&#34;</span>&gt;Mastodon&lt;/<span style="color:#f92672">a</span>&gt;
 </span></span></code></pre></div><p>I may see if I can figure out how to add that to the theme and, if so, open a PR for it.</p>
-</div>
+<p><strong>EDIT:</strong> The statement above was inaccurate! When adding to the <code>[menu]</code> element of the config file, <code>rel=&quot;me&quot;</code> <strong>is</strong> already included. No modification is necessary:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-toml" data-lang="toml"><span style="display:flex;"><span>[[<span style="color:#a6e22e">menu</span>.<span style="color:#a6e22e">icons</span>]]
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">identifier</span> = <span style="color:#e6db74">&#34;mastodon&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">name</span> = <span style="color:#e6db74">&#34;Mastodon&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">url</span> = <span style="color:#e6db74">&#34;https://social.sdf.org/@loopednetwork&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">weight</span> = <span style="color:#ae81ff">20</span>
+</span></span></code></pre></div></div>
 </article>
 
     <hr />

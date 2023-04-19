@@ -14,7 +14,7 @@ However, for the past couple of months I've spent the majority of my time writin
 
 I previously used VSCode pretty much from when it was released until late 2019. During that time I was working as a sysadmin in a Windows-centric environment, meaning that PowerShell was the overwhelming majority of what I wrote and VSCode just seemed natural as it replaced the [PowerShell ISE](https://learn.microsoft.com/en-us/powershell/scripting/windows-powershell/ise/introducing-the-windows-powershell-ise?view=powershell-7.3). However, when I took a new role in 2019 and began working in Python and Groovy, I started using Vim instead and became fairly enamored with it. I figured as a Vim aficionado I'd share some thoughts on coming back to VSCode for the past few months.
 
-# Pros
+## Pros
 
 The biggest benefit is that, given how ubiquitous it's become, basically **everything** imaginable just _works_ with it. You install an extension with the click of a button, wait a few seconds, and suddenly you have an LSP, syntax support, debugging, etc. all ready to go. The same goes for new supporting tech, like [GitHub Copilot](https://github.com/features/copilot). While Copilot definitely works with Neovim as well, I found the experience to be a bit more polished in VSCode.
 
@@ -28,7 +28,7 @@ I had a love-hate relationship with the terminal integrated into VSCode. While I
 
 The ability to work with non-code files in a meaningful way was extremely nice. Along with the README for my repos, I often write various other documentation in Markdown. Being able to quickly preview what that would look like inside of the editor was very handy, as was the fact that I found [an extension](https://marketplace.visualstudio.com/items?itemName=yzane.markdown-pdf) which would allow me to convert that Markdown to a PDF in the instance I was sharing it with customers. Likewise, much of my coding involves REST APIs, so I'm frequently looking at raw JSON responses. Being able to paste that into a file in VSCode, right-click, and select to format the document into a whitespace-friendly version was extremely nice. Previously I would end up having to paste the same JSON into something like [JSONLint](https://jsonlint.com/).
 
-# Cons
+## Cons
 
 The most immediate con to VSCode, especially as someone who mainly uses Vim, is that it is unbelievably slow while being a massive drain on system resources. Even on a MacBook Pro spec'd out for development, it would lag with a suprising degree of frequency while consuming several gigabytes of RAM. I was initially curious if this was a problem specific to C#, so I tried writing a little Python with it. This experienced the same issues; fixing a warning from Pylint and re-saving the file would often require 5+ seconds for the warning to be removed. I didn't expect performance to be amazing since VSCode is an [Electron](https://www.electronjs.org/) application, after all, but I also didn't expect it to be quite as bad as it is.
 
@@ -36,6 +36,6 @@ While the aforementioned Vim extension makes editing tolerable, I found that was
 
 Since the time I last used it, VSCode has become even more of a one-stop-shop for developers, with out of the box integrations for all sorts of things. While that could be helpful if I found them useful, for anything I didn't use it was just an additional drain. For example, VSCode has support for managing a git repository from right within the editor. I tried it out but ultimately found myself preferring to just run `git` commands from a terminal the way I normally do. While having extras doesn't necessarily hurt anything (aside from eating up yet more resources), it reminds me a bit of back when Opera was a web browser that also had an email client, IRC client, etc.
 
-# Wrap-up
+## Wrap-up
 
 Would I consider switching from Vim to VSCode? While I wouldn't be overly bothered if I found myself in an environment where I _had_ to use VSCode, I don't think I'd end up swapping to it for my non-C# work. I just value the speed and efficiency of Vim a little too much at the moment. If VSCode was a little bit leaner, though, I could see it becoming a more attractive option.

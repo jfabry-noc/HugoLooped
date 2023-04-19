@@ -25,3 +25,13 @@ My only real issue with it is that I the link to my [Mastodon](https://mastodon.
 ```
 
 I may see if I can figure out how to add that to the theme and, if so, open a PR for it.
+
+**EDIT:** The statement above was inaccurate! When adding to the `[menu]` element of the config file, `rel="me"` **is** already included. No modification is necessary:
+
+```toml
+[[menu.icons]]
+    identifier = "mastodon"
+    name = "Mastodon"
+    url = "https://social.sdf.org/@loopednetwork"
+    weight = 20
+```
