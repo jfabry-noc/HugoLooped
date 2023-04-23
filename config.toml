@@ -14,6 +14,7 @@ summaryLength = 70  # number of words for article summaries
 
 
 [params]
+    mainSections = ["2022", "2023"]
     author = "LoopedNetwork"
     description = "The /dev/null of my life"  # this will be added as metadata
 
